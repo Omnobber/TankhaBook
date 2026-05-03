@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TankhaBook – Payroll, Attendance & Ledger for Indian Businesses</title>
+  <meta name="description" content="TankhaBook is a simple, fast, and affordable payroll, attendance, and ledger management SaaS for Indian businesses." />
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <!-- Remix Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ========== LOADER ========== -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">T<span>B</span></div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+  </div>
+</div>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <span class="brand-icon">T</span>ankha<span class="brand-accent">Book</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="ri-menu-3-line"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <div class="d-flex gap-2 mt-3 mt-lg-0">
+        <a href="#" class="btn btn-ghost">Login</a>
+        <a href="#contact" class="btn btn-primary-custom">Get Started</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero-section" id="home">
+  <div class="hero-bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+  <div class="container">
+    <div class="row align-items-center min-vh-hero">
+      <div class="col-lg-6 hero-content" data-aos>
+        <div class="hero-badge"><i class="ri-shield-check-fill"></i> Trusted by Indian Businesses</div>
+        <h1 class="hero-title">Manage Your Staff, Salary & Attendance <span class="gradient-text">in One Place</span></h1>
+        <p class="hero-sub">TankhaBook is your all-in-one solution for employee management, payroll, attendance tracking, and business ledger — built specifically for Indian SMEs.</p>
+        <div class="hero-cta d-flex flex-wrap gap-3">
+          <a href="#contact" class="btn btn-primary-custom btn-lg">
+            <i class="ri-rocket-line me-2"></i>Start Free
+          </a>
+          <a href="https://wa.me/919234986070" target="_blank" class="btn btn-whatsapp btn-lg">
+            <i class="ri-whatsapp-line me-2"></i>Chat on WhatsApp
+          </a>
+        </div>
+        <div class="hero-stats d-flex gap-4 mt-4">
+          <div class="stat"><strong>500+</strong><span>Businesses</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><strong>10k+</strong><span>Employees</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><strong>4.8★</strong><span>Rating</span></div>
+        </div>
+      </div>
+      <div class="col-lg-6 hero-visual mt-5 mt-lg-0" data-aos data-aos-delay="200">
+        <div class="dashboard-mockup">
+          <div class="mockup-header">
+            <div class="mockup-dots"><span></span><span></span><span></span></div>
+            <div class="mockup-title">TankhaBook Dashboard</div>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-card blue">
+              <div class="mc-icon"><i class="ri-team-line"></i></div>
+              <div><div class="mc-num">48</div><div class="mc-label">Employees</div></div>
+            </div>
+            <div class="mockup-card green">
+              <div class="mc-icon"><i class="ri-calendar-check-line"></i></div>
+              <div><div class="mc-num">92%</div><div class="mc-label">Attendance</div></div>
+            </div>
+            <div class="mockup-card orange">
+              <div class="mc-icon"><i class="ri-money-rupee-circle-line"></i></div>
+              <div><div class="mc-num">₹2.4L</div><div class="mc-label">Payroll</div></div>
+            </div>
+            <div class="mockup-chart">
+              <div class="chart-label">Monthly Payroll Trend</div>
+              <div class="chart-bars">
+                <div class="bar" style="--h:55%"><span>J</span></div>
+                <div class="bar" style="--h:70%"><span>F</span></div>
+                <div class="bar" style="--h:60%"><span>M</span></div>
+                <div class="bar active" style="--h:85%"><span>A</span></div>
+                <div class="bar" style="--h:75%"><span>M</span></div>
+                <div class="bar" style="--h:90%"><span>J</span></div>
+              </div>
+            </div>
+            <div class="mockup-list">
+              <div class="ml-title">Recent Payments</div>
+              <div class="ml-item"><div class="ml-avatar" style="background:#e8f4fd">R</div><div><div class="ml-name">Rahul Sharma</div><div class="ml-role">Developer</div></div><div class="ml-amount">₹32,000</div></div>
+              <div class="ml-item"><div class="ml-avatar" style="background:#fde8f4">P</div><div><div class="ml-name">Priya Singh</div><div class="ml-role">Manager</div></div><div class="ml-amount">₹45,000</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FEATURES ========== -->
+<section class="features-section section-pad" id="features">
+  <div class="container">
+    <div class="section-header text-center" data-aos>
+      <div class="section-tag">Everything You Need</div>
+      <h2 class="section-title">Powerful Features for <span class="gradient-text">Modern Businesses</span></h2>
+      <p class="section-sub">From hiring to salary — TankhaBook handles everything so you don't have to.</p>
+    </div>
+    <div class="row g-4 mt-3">
+      <div class="col-md-6 col-lg-4" data-aos data-aos-delay="100">
+        <div class="feature-card">
+          <div class="fc-icon" style="--ic:#3b82f6;--ib:#eff6ff"><i class="ri-group-line"></i></div>
+          <h5>Employee Management</h5>
+          <p>Add, manage, and track all your employees with complete profiles, documents, and history in one dashboard.</p>
+          <div class="fc-tag">Core Feature</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos data-aos-delay="150">
+        <div class="feature-card">
+          <div class="fc-icon" style="--ic:#10b981;--ib:#ecfdf5"><i class="ri-calendar-check-2-line"></i></div>
+          <h5>Attendance Tracking</h5>
+          <p>Mark attendance manually or auto-import. Track present, absent, late, and half-days with real-time reports.</p>
+          <div class="fc-tag">Popular</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos data-aos-delay="200">
+        <div class="feature-card">
+          <div class="fc-icon" style="--ic:#f59e0b;--ib:#fffbeb"><i class="ri-money-rupee-circle-line"></i></div>
+          <h5>Payroll System</h5>
+          <p>Auto-calculate salaries with deductions, advances, bonuses. Generate payslips in one click. PF/ESI ready.</p>
+          <div class="fc-tag">Core Feature</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos data-aos-delay="250">
+        <div class="feature-card">
+          <div class="fc-icon" style="--ic:#8b5cf6;--ib:#f5f3ff"><i class="ri-book-2-line"></i></div>
+          <h5>Ledger / Khata</h5>
+          <p>Maintain a digital Khata for each employee. Track advances, dues, payments, and balances in real time.</p>
+          <div class="fc-tag">Unique</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos data-aos-delay="300">
+        <div class="feature-card">
+          <div class="fc-icon" style="--ic:#ef4444;--ib:#fef2f2"><i class="ri-bar-chart-2-line"></i></div>
+          <h5>Reports & Analytics</h5>
+          <p>Download monthly payroll reports, attendance summaries, and tax reports in PDF/Excel format anytime.</p>
+          <div class="fc-tag">Smart</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos data-aos-delay="350">
+        <div class="feature-card">
+          <div class="fc-icon" style="--ic:#0ea5e9;--ib:#f0f9ff"><i class="ri-notification-3-line"></i></div>
+          <h5>Smart Alerts</h5>
+          <p>Get notified for salary due dates, low attendance, pending advances, and important deadlines via SMS/email.</p>
+          <div class="fc-tag">New</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== APP SHOWCASE ========== -->
+<section class="showcase-section section-pad" id="app">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5" data-aos>
+        <div class="section-tag">Mobile First</div>
+        <h2 class="section-title">Manage On the Go with Our <span class="gradient-text">Mobile App</span></h2>
+        <p class="section-sub mb-4">Access everything from your phone — mark attendance, approve payroll, and check reports anytime, anywhere.</p>
+        <ul class="app-features-list">
+          <li><i class="ri-checkbox-circle-fill"></i> One-tap attendance marking</li>
+          <li><i class="ri-checkbox-circle-fill"></i> Instant payslip generation</li>
+          <li><i class="ri-checkbox-circle-fill"></i> Real-time salary tracking</li>
+          <li><i class="ri-checkbox-circle-fill"></i> Works on low-end Android too</li>
+        </ul>
+        <div class="d-flex gap-3 mt-4">
+          <a href="#contact" class="btn btn-primary-custom"><i class="ri-google-play-line me-2"></i>Google Play</a>
+          <a href="#contact" class="btn btn-outline-custom"><i class="ri-apple-line me-2"></i>App Store</a>
+        </div>
+      </div>
+      <div class="col-lg-7" data-aos data-aos-delay="200">
+        <div class="phone-showcase">
+          <div class="phone-frame main-phone">
+            <div class="phone-screen">
+              <div class="ps-header">
+                <span>TankhaBook</span>
+                <i class="ri-notification-3-line"></i>
+              </div>
+              <div class="ps-greeting">Good Morning, Ramesh 👋</div>
+              <div class="ps-cards">
+                <div class="ps-card blue"><i class="ri-user-3-line"></i><div><strong>48</strong><small>Employees</small></div></div>
+                <div class="ps-card green"><i class="ri-checkbox-circle-line"></i><div><strong>44</strong><small>Present</small></div></div>
+              </div>
+              <div class="ps-section-title">Today's Attendance</div>
+              <div class="ps-att-list">
+                <div class="ps-att-item"><div class="ps-att-dot green"></div><span>Ramesh Kumar</span><span class="ms-auto text-success small">Present</span></div>
+                <div class="ps-att-item"><div class="ps-att-dot red"></div><span>Suresh Yadav</span><span class="ms-auto text-danger small">Absent</span></div>
+                <div class="ps-att-item"><div class="ps-att-dot yellow"></div><span>Meena Devi</span><span class="ms-auto text-warning small">Late</span></div>
+              </div>
+              <div class="ps-btn">Mark Attendance</div>
+            </div>
+          </div>
+          <div class="phone-frame side-phone">
+            <div class="phone-screen">
+              <div class="ps-header small"><span>Payroll</span><i class="ri-download-line"></i></div>
+              <div class="ps-month">May 2025</div>
+              <div class="ps-payroll-card">
+                <div class="pp-row"><span>Basic Salary</span><strong>₹25,000</strong></div>
+                <div class="pp-row"><span>HRA</span><strong>₹8,000</strong></div>
+                <div class="pp-row deduct"><span>PF Deduction</span><strong>-₹3,000</strong></div>
+                <div class="pp-divider"></div>
+                <div class="pp-row total"><span>Net Salary</span><strong>₹30,000</strong></div>
+              </div>
+              <div class="ps-btn green-btn">Download Payslip</div>
+            </div>
+          </div>
+          <div class="phone-glow"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHY CHOOSE US ========== -->
+<section class="why-section section-pad" id="why">
+  <div class="container">
+    <div class="section-header text-center" data-aos>
+      <div class="section-tag">Why TankhaBook</div>
+      <h2 class="section-title">Built for <span class="gradient-text">Bharat's Businesses</span></h2>
+    </div>
+    <div class="row g-4 mt-3">
+      <div class="col-6 col-lg-3" data-aos data-aos-delay="100">
+        <div class="why-card">
+          <div class="why-num">01</div>
+          <div class="why-icon"><i class="ri-leaf-line"></i></div>
+          <h6>Simple to Use</h6>
+          <p>No training needed. If you can use WhatsApp, you can use TankhaBook.</p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3" data-aos data-aos-delay="150">
+        <div class="why-card">
+          <div class="why-num">02</div>
+          <div class="why-icon"><i class="ri-flashlight-line"></i></div>
+          <h6>Lightning Fast</h6>
+          <p>Pages load in under 1 second even on 3G connections across India.</p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3" data-aos data-aos-delay="200">
+        <div class="why-card">
+          <div class="why-num">03</div>
+          <div class="why-icon"><i class="ri-wallet-3-line"></i></div>
+          <h6>Affordable</h6>
+          <p>Starts free. Paid plans cheaper than a chai per day for your whole team.</p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3" data-aos data-aos-delay="250">
+        <div class="why-card">
+          <div class="why-num">04</div>
+          <div class="why-icon"><i class="ri-india-line"></i></div>
+          <h6>Made for India</h6>
+          <p>PF, ESI, TDS, regional holidays — everything tailored for Indian labour laws.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRICING ========== -->
+<section class="pricing-section section-pad" id="pricing">
+  <div class="container">
+    <div class="section-header text-center" data-aos>
+      <div class="section-tag">Simple Pricing</div>
+      <h2 class="section-title">Transparent Plans, <span class="gradient-text">No Surprises</span></h2>
+      <p class="section-sub">Start free, scale when you're ready. No credit card required.</p>
+    </div>
+    <div class="row g-4 justify-content-center mt-3">
+      <div class="col-md-6 col-lg-4" data-aos data-aos-delay="100">
+        <div class="pricing-card">
+          <div class="pc-badge">Free</div>
+          <div class="pc-price">₹0<span>/month</span></div>
+          <div class="pc-title">Starter</div>
+          <div class="pc-subtitle">Perfect for small businesses</div>
+          <ul class="pc-features">
+            <li><i class="ri-check-line"></i> Up to 5 Employees</li>
+            <li><i class="ri-check-line"></i> Basic Attendance</li>
+            <li><i class="ri-check-line"></i> Simple Payroll</li>
+            <li><i class="ri-check-line"></i> 1 Admin User</li>
+            <li class="disabled"><i class="ri-close-line"></i> Reports Export</li>
+            <li class="disabled"><i class="ri-close-line"></i> Ledger / Khata</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline-custom w-100">Get Started Free</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos data-aos-delay="150">
+        <div class="pricing-card featured">
+          <div class="pc-badge best">⭐ Best Value</div>
+          <div class="pc-price">₹499<span>/month</span></div>
+          <div class="pc-title">Pro</div>
+          <div class="pc-subtitle">For growing businesses</div>
+          <ul class="pc-features">
+            <li><i class="ri-check-line"></i> Up to 50 Employees</li>
+            <li><i class="ri-check-line"></i> Advanced Attendance</li>
+            <li><i class="ri-check-line"></i> Full Payroll + PF/ESI</li>
+            <li><i class="ri-check-line"></i> 3 Admin Users</li>
+            <li><i class="ri-check-line"></i> Reports Export (PDF/Excel)</li>
+            <li><i class="ri-check-line"></i> Ledger / Khata</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary-custom w-100">Start Pro Plan</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos data-aos-delay="200">
+        <div class="pricing-card">
+          <div class="pc-badge enterprise">Enterprise</div>
+          <div class="pc-price">Custom<span>/month</span></div>
+          <div class="pc-title">Business</div>
+          <div class="pc-subtitle">For large organisations</div>
+          <ul class="pc-features">
+            <li><i class="ri-check-line"></i> Unlimited Employees</li>
+            <li><i class="ri-check-line"></i> Multi-branch Support</li>
+            <li><i class="ri-check-line"></i> Custom Integrations</li>
+            <li><i class="ri-check-line"></i> Unlimited Admins</li>
+            <li><i class="ri-check-line"></i> Priority Support</li>
+            <li><i class="ri-check-line"></i> Dedicated Account Manager</li>
+          </ul>
+          <a href="https://wa.me/919234986070" target="_blank" class="btn btn-whatsapp w-100"><i class="ri-whatsapp-line me-2"></i>Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="testimonials-section section-pad" id="testimonials">
+  <div class="container">
+    <div class="section-header text-center" data-aos>
+      <div class="section-tag">Customer Stories</div>
+      <h2 class="section-title">What Our <span class="gradient-text">Customers Say</span></h2>
+    </div>
+    <div class="row g-4 mt-3">
+      <div class="col-md-4" data-aos data-aos-delay="100">
+        <div class="testimonial-card">
+          <div class="tc-stars">★★★★★</div>
+          <p>"TankhaBook ne humara poora attendance aur salary ka kaam aasaan kar diya. Pehle ghanto lagte the, ab 10 minute mein ho jaata hai!"</p>
+          <div class="tc-author">
+            <div class="tc-avatar" style="background:#dbeafe;color:#3b82f6">R</div>
+            <div><strong>Rajesh Gupta</strong><small>Factory Owner, Ranchi</small></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos data-aos-delay="150">
+        <div class="testimonial-card featured-tc">
+          <div class="tc-stars">★★★★★</div>
+          <p>"Best software for small business. Payslip generation is super fast and employees love getting it on WhatsApp. Highly recommend!"</p>
+          <div class="tc-author">
+            <div class="tc-avatar" style="background:#dcfce7;color:#16a34a">S</div>
+            <div><strong>Sunita Mahato</strong><small>Garment Shop, Jamshedpur</small></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos data-aos-delay="200">
+        <div class="testimonial-card">
+          <div class="tc-stars">★★★★★</div>
+          <p>"Earlier we managed everything on paper. TankhaBook shifted us 100% digital. The ledger/khata feature is exactly what we needed."</p>
+          <div class="tc-author">
+            <div class="tc-avatar" style="background:#fef9c3;color:#ca8a04">A</div>
+            <div><strong>Anil Pandey</strong><small>Construction Business, Patna</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="contact-section section-pad" id="contact">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5" data-aos>
+        <div class="section-tag">Get In Touch</div>
+        <h2 class="section-title">Ready to Get <span class="gradient-text">Started?</span></h2>
+        <p class="section-sub">Fill the form and our team will contact you within 24 hours. Or reach us directly:</p>
+        <div class="contact-info-list">
+          <a href="tel:9234986070" class="contact-info-item">
+            <div class="ci-icon" style="--c:#3b82f6"><i class="ri-phone-line"></i></div>
+            <div><strong>Call Us</strong><span>+91 92349 86070</span></div>
+          </a>
+          <a href="https://wa.me/919234986070" target="_blank" class="contact-info-item">
+            <div class="ci-icon" style="--c:#25d366"><i class="ri-whatsapp-line"></i></div>
+            <div><strong>WhatsApp</strong><span>Chat with us instantly</span></div>
+          </a>
+          <a href="mailto:support@tankhabook.com" class="contact-info-item">
+            <div class="ci-icon" style="--c:#f59e0b"><i class="ri-mail-line"></i></div>
+            <div><strong>Email</strong><span>support@tankhabook.com</span></div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-7" data-aos data-aos-delay="150">
+        <div class="contact-form-card">
+          <h5 class="mb-4">Send Enquiry</h5>
+          <div id="formMsg" class="form-message d-none"></div>
+          <div id="enquiryForm">
+            <div class="mb-3">
+              <label class="form-label">Your Name *</label>
+              <input type="text" id="f_name" class="form-control custom-input" placeholder="e.g. Ramesh Kumar" required />
+            </div>
+            <div class="mb-3">
+              <input type="hidden" id="f_honeypot" name="website" value="" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Phone Number *</label>
+              <input type="tel" id="f_phone" class="form-control custom-input" placeholder="e.g. 9876543210" maxlength="10" required />
+            </div>
+            <div class="mb-4">
+              <label class="form-label">Message</label>
+              <textarea id="f_message" class="form-control custom-input" rows="4" placeholder="Tell us about your business and needs..."></textarea>
+            </div>
+            <button type="button" id="submitBtn" class="btn btn-primary-custom w-100 btn-lg" onclick="submitEnquiry()">
+              <span id="btnText"><i class="ri-send-plane-line me-2"></i>Send Enquiry</span>
+              <span id="btnLoader" class="d-none"><i class="ri-loader-4-line spin me-2"></i>Sending...</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand">
+          <span class="brand-icon">T</span>ankha<span class="brand-accent">Book</span>
+        </div>
+        <p class="footer-desc">India's simplest payroll, attendance & ledger software for small and medium businesses.</p>
+        <div class="d-flex gap-3 mt-3">
+          <a href="https://wa.me/919234986070" target="_blank" class="footer-social wa"><i class="ri-whatsapp-line"></i></a>
+          <a href="mailto:support@tankhabook.com" class="footer-social mail"><i class="ri-mail-line"></i></a>
+          <a href="tel:9234986070" class="footer-social phone"><i class="ri-phone-line"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6 class="footer-heading">Product</h6>
+        <ul class="footer-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#app">Mobile App</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6 class="footer-heading">Company</h6>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h6 class="footer-heading">Contact</h6>
+        <div class="footer-contact">
+          <div><i class="ri-phone-line"></i> <a href="tel:9234986070">+91 92349 86070</a></div>
+          <div><i class="ri-mail-line"></i> <a href="mailto:support@tankhabook.com">support@tankhabook.com</a></div>
+          <div><i class="ri-map-pin-line"></i> Jharkhand, India</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 TankhaBook. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== FLOATING BUTTONS ========== -->
+<div class="floating-buttons">
+  <a href="https://wa.me/919234986070" target="_blank" class="float-btn wa-btn" title="Chat on WhatsApp">
+    <i class="ri-whatsapp-line"></i>
+    <span class="float-label">WhatsApp</span>
+  </a>
+  <a href="tel:9234986070" class="float-btn call-btn" title="Call Us">
+    <i class="ri-phone-line"></i>
+    <span class="float-label">Call Now</span>
+  </a>
+  <a href="mailto:support@tankhabook.com" class="float-btn email-btn" title="Email Us">
+    <i class="ri-mail-line"></i>
+    <span class="float-label">Email</span>
+  </a>
+</div>
+
+<!-- Dark Mode Toggle -->
+<button class="dark-toggle" id="darkToggle" title="Toggle Dark Mode">
+  <i class="ri-moon-line" id="darkIcon"></i>
+</button>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
