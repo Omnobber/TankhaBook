@@ -1,526 +1,350 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TankhaBook – Payroll, Attendance & Ledger for Indian Businesses</title>
-  <meta name="description" content="TankhaBook is a simple, fast, and affordable payroll, attendance, and ledger management SaaS for Indian businesses." />
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tankhabook – Factory attendance and salary on one phone</title>
+<meta name="description" content="Tankhabook: attendance, payroll, PF/ESI and salary slips for Indian factories, contractors and small businesses. Free for up to 5 employees.">
+<meta property="og:title" content="Tankhabook – Factory attendance and salary on one phone"><meta property="og:description" content="Location-checked attendance, payroll with PF/ESI, salary slips. Free to start."><meta name="theme-color" content="#0d6b5c">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Tankhabook","applicationCategory":"BusinessApplication","operatingSystem":"Web, Android, iOS","url":"https://tankhabook.com","offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"INR"},{"@type":"Offer","name":"Pro","price":"499","priceCurrency":"INR"}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbfcfb;--ink:#10211f;--mut:#51635f;--teal:#0d6b5c;--tealD:#0a4f44;--sun:#f5b800;--mist:#e8f0ee;--line:#d3dfdc;--card:#fff;--on:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1716;--ink:#ecf2f0;--mut:#9fb2ad;--teal:#3fc2a8;--tealD:#2c9a85;--mist:#16231f;--line:#2a3a37;--card:#152120;--on:#06130f}}
+:root[data-theme="dark"]{--bg:#0e1716;--ink:#ecf2f0;--mut:#9fb2ad;--teal:#3fc2a8;--tealD:#2c9a85;--mist:#16231f;--line:#2a3a37;--card:#152120;--on:#06130f}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Hind,"Noto Sans Devanagari",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Georgia,sans-serif;line-height:1.1;margin:0;letter-spacing:-.02em}
+h1{font-size:clamp(38px,6.4vw,70px);font-weight:800}h2{font-size:clamp(28px,4vw,42px);font-weight:700}h3{font-size:20px}
+p{margin:0}.w{max-width:1120px;margin:0 auto;padding:0 20px}.sec{padding:84px 0}.mut{color:var(--mut)}.lead{max-width:56ch;color:var(--mut);font-size:19px}
+a{color:inherit}button,input,select{font:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .w{display:flex;align-items:center;gap:22px;height:64px}.logo{font:800 22px "Bricolage Grotesque",sans-serif;text-decoration:none;margin-right:auto}.logo i{font-style:normal;color:var(--teal)}
+nav a.l{text-decoration:none;color:var(--mut);font-size:15px}nav a.l:hover{color:var(--ink)}
+.btn{display:inline-block;padding:13px 22px;border-radius:10px;background:var(--teal);color:var(--on);font-weight:600;text-decoration:none;border:2px solid var(--teal);cursor:pointer}
+.btn:hover{background:var(--tealD);border-color:var(--tealD)}.btn.o{background:none;color:var(--ink);border-color:var(--ink)}.btn.o:hover{background:var(--mist)}.btn.s{padding:9px 16px;font-size:15px}
+.hero{padding:72px 0 64px;background:linear-gradient(90deg,transparent 47px,color-mix(in srgb,#d9534f 45%,transparent) 48px,transparent 50px),repeating-linear-gradient(0deg,transparent 0 31px,color-mix(in srgb,var(--line) 70%,transparent) 31px 32px)}.hero .w{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero .hi{font-size:22px;color:var(--teal);font-weight:600;margin:14px 0 18px}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.slip{background:var(--card);border:2px dashed var(--ink);border-radius:14px;padding:22px;transform:rotate(1.6deg);box-shadow:10px 10px 0 var(--sun)}
+.slip .r{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--line);font-size:15px}.slip .r:last-of-type{border:0}
+.slip .n{display:flex;justify-content:space-between;align-items:baseline;margin-top:10px;padding-top:12px;border-top:2px solid var(--ink)}.slip .n b{font:800 30px "Bricolage Grotesque";color:var(--teal)}
+.slip small{display:block;color:var(--mut);margin-bottom:10px}
+.band{background:var(--mist);border-block:1px solid var(--line)}.band .w{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-block:28px}.band b{display:block;font-family:"Bricolage Grotesque";font-size:18px}.band span{font-size:15px;color:var(--mut)}
+.feat{margin-top:40px;border-top:2px solid var(--ink)}.feat div{display:grid;grid-template-columns:260px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}.feat p{color:var(--mut)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px;counter-reset:s}.steps div{border-left:4px solid var(--sun);padding-left:18px}.steps div:before{counter-increment:s;content:counter(s);font:800 40px "Bricolage Grotesque";color:var(--teal)}.steps h3{margin:4px 0 8px}.steps p{color:var(--mut)}
+.demo{background:var(--ink);color:#ecf2f0}.demo .mut,.demo .lead{color:#a9bdb8}.demo .w{display:grid;grid-template-columns:1fr 420px;gap:56px;align-items:start}
+.demo .btn.o{color:#ecf2f0;border-color:#ecf2f0}.demo .btn.o:hover{background:#ffffff1a}.demo .btn{background:var(--sun);border-color:var(--sun);color:#10211f}.demo .btn.o{background:none;border-color:#ecf2f0;color:#ecf2f0}
+.seg{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}.seg .btn{padding:10px 16px;font-size:15px}.seg .btn[aria-pressed=true]{outline:3px solid #fff}
+.cred{margin:0 0 22px;padding:0;list-style:none;display:grid;gap:8px;font-size:15px}.cred li{background:#ffffff12;border-radius:8px;padding:9px 12px}.cred code{font:600 14px ui-monospace,monospace;color:var(--sun)}
+.phone{width:100%;max-width:400px;height:760px;border:10px solid #000;border-radius:38px;background:#fff;overflow:hidden;box-shadow:0 0 0 2px #ffffff30,12px 12px 0 var(--sun);justify-self:center}.phone iframe{width:100%;height:100%;border:0;display:block}
+form{display:grid;gap:14px;max-width:520px;margin-top:28px}label{display:grid;gap:5px;font-size:14px;color:var(--mut)}
+input,select{padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}
+#out{white-space:pre-wrap;background:var(--mist);border:1px solid var(--line);border-radius:8px;padding:14px;font-size:15px;max-width:520px}#out[hidden]{display:none}
+details{border-bottom:1px solid var(--line);padding:16px 0}summary{cursor:pointer;font:700 19px "Bricolage Grotesque"}details p{color:var(--mut);margin-top:8px;max-width:64ch}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-size:15px}footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:900px){.hero .w,.demo .w{grid-template-columns:1fr}.band .w{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr}.feat div{grid-template-columns:1fr;gap:4px}nav a.l{display:none}.sec{padding:60px 0}.slip{transform:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.ic{background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 10px;cursor:pointer;font-size:14px}.ic:hover{background:var(--mist)}
+.sw{display:flex;align-items:center;gap:14px;margin:26px 0;flex-wrap:wrap}.sw input[type=range]{flex:1;min-width:220px;accent-color:var(--teal);padding:0}.sw label{display:flex;align-items:center;gap:8px;color:var(--ink);font-size:15px}.sw b{font:800 22px "Bricolage Grotesque"}
+.pl{display:grid;grid-template-columns:repeat(3,1fr);border:2px solid var(--ink);border-radius:16px;overflow:hidden;background:var(--card)}.pl>div{padding:28px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:10px}.pl>div:last-child{border:0}.pl .ft{background:var(--ink);color:var(--bg)}.pl .ft .mut,.pl .ft ul{color:inherit;opacity:.85}.pl b.pp{font:800 40px "Bricolage Grotesque"}.pl ul{margin:0;padding-left:18px;color:var(--mut);flex:1}.pl .btn{text-align:center}.pl .ft .btn{background:var(--sun);border-color:var(--sun);color:#10211f}
+.cmpw{overflow-x:auto}.cmp{width:100%;border-collapse:collapse;margin-top:28px;font-size:15px;min-width:560px}.cmp th,.cmp td{text-align:left;padding:12px;border-bottom:1px solid var(--line)}.cmp th:last-child,.cmp td:last-child{background:var(--mist);font-weight:600}
+.rm{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:32px}.rm span{display:inline-block;border:1px solid var(--ink);border-radius:20px;padding:0 10px;font-size:13px;margin-bottom:8px}.rm p{color:var(--mut)}
+.ann{background:var(--ink);color:var(--bg);text-align:center;padding:8px 12px;font-size:15px}.ann a{color:var(--sun);font-weight:600}
+.pg{position:fixed;top:0;left:0;height:3px;width:0;background:var(--sun);z-index:9}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:6;background:#25d366;color:#06130f;font-weight:700;text-decoration:none;padding:12px 18px;border-radius:30px;box-shadow:0 6px 18px #0004}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}.cg label{font-size:13px}.cg input{padding:8px;width:100%}
+.ind{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 18px}.ind button{border:1px solid var(--ink);background:none;color:var(--ink);border-radius:24px;padding:8px 16px;cursor:pointer}.ind button[aria-selected=true]{background:var(--ink);color:var(--bg)}
+.ip{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--ink);border-radius:14px;overflow:hidden}.ip div{padding:26px}.ip div+div{background:var(--mist);border-left:2px solid var(--ink)}.ip h3{margin-bottom:8px}.ip p{color:var(--mut);font-size:18px}
+.fd{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;margin-top:36px;border:2px dashed var(--ink);border-radius:14px;padding:22px}.fd b{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:var(--sun);color:#10211f;font:800 24px "Bricolage Grotesque"}
+@media(max-width:900px){.ip{grid-template-columns:1fr}.ip div+div{border-left:0;border-top:2px solid var(--ink)}}
+.pl>div.rec{box-shadow:inset 0 0 0 5px var(--sun)}#rc{color:var(--mut);font-size:15px}
+@media(max-width:900px){.pl,.rm{grid-template-columns:1fr}.pl>div{border-right:0;border-bottom:1px solid var(--line)}}
+</style></head><body><div class="pg" id="pgb"></div>
+<div class="ann">Free for up to 5 employees. <a href="#demo">Try the live demo</a></div>
+<nav><div class="w"><a class="logo" href="#top">Tankha<i>book</i></a><a class="l" href="#features">Features</a><a class="l" href="#how">How it works</a><a class="l" href="#pricing">Pricing</a><a class="l" href="#faq">FAQ</a><button class="ic" id="lg" aria-label="Switch language">हिं / EN</button><button class="ic" id="th" aria-label="Switch light or dark theme">◐</button><a class="btn s" href="#demo">Request demo</a></div></nav>
 
-  <!-- Bootstrap 5 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <!-- Remix Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" />
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+<header class="hero" id="top"><div class="w"><div>
+<h1 id="h1">Factory attendance and salary, settled on one phone.</h1>
+<p class="hi">हाज़िरी से तनख्वाह तक, सब एक ऐप में</p>
+<p class="lead" id="ld">Mark attendance, track overtime and advances, work out PF and ESI, and send every worker a salary slip. Built for factories and contractors who still run this on registers and Excel.</p>
+<div class="cta"><a class="btn" href="#demo">Try the live demo</a><a class="btn o" href="#how">See how it works</a></div></div>
+<div class="slip"><small>Try it: salary estimate · सैलरी अनुमान</small>
+<div class="cg"><label>Days worked<input id="cd" type="number" value="26" min="0" max="31"></label><label>Daily wage ₹<input id="cw" type="number" value="600" min="0"></label><label>Overtime hours<input id="co" type="number" value="6" min="0"></label><label>Advance ₹<input id="ca" type="number" value="2000" min="0"></label></div>
+<div class="r"><span>Earned</span><span id="r1"></span></div><div class="r"><span>Overtime at 2x</span><span id="r2"></span></div><div class="r"><span>PF 12% and ESI 0.75%</span><span id="r3"></span></div><div class="r"><span>Advance</span><span id="r4"></span></div>
+<div class="n"><span>Net payable</span><b id="r5"></b></div><small style="margin:10px 0 0">Estimate only. Rates are set in the app.</small></div></div></header>
 
-<!-- ========== LOADER ========== -->
-<div id="loader">
-  <div class="loader-inner">
-    <div class="loader-logo">T<span>B</span></div>
-    <div class="loader-bar"><div class="loader-fill"></div></div>
-  </div>
-</div>
+<div class="band"><div class="w"><div><b>Works on any phone</b><span>Opens in the browser. Nothing to install.</span></div><div><b>Hindi and English</b><span>Switch language with one tap.</span></div><div><b>Location-checked punch-in</b><span>Workers punch in only at the branch.</span></div><div><b>See it before you decide</b><span>The demo below is the real app.</span></div></div></div>
 
-<!-- ========== NAVBAR ========== -->
-<nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <span class="brand-icon">T</span>ankha<span class="brand-accent">Book</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <i class="ri-menu-3-line"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav mx-auto gap-lg-2">
-        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-        <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-      <div class="d-flex gap-2 mt-3 mt-lg-0">
-        <a href="#" class="btn btn-ghost">Login</a>
-        <a href="#contact" class="btn btn-primary-custom">Get Started</a>
-      </div>
-    </div>
-  </div>
-</nav>
+<section class="sec" id="features"><div class="w"><h2>Everything from the gate to the salary slip</h2>
+<div class="feat">
+<div><h3>Attendance in one tap</h3><p>Mark present, absent or half day for every worker, or mark everyone present and fix the exceptions. Holidays are built in.</p></div>
+<div><h3>Geo-fenced punch-in with selfie</h3><p>Workers punch in from their own phone. The app checks they are inside the branch radius and can ask for a selfie.</p></div>
+<div><h3>Daily, monthly and piece-rate pay</h3><p>Set the pay type per worker. Overtime, advances and piece counts flow straight into the month's salary.</p></div>
+<div><h3>PF and ESI, switched on or off</h3><p>Turn deductions on for your unit and see the totals in the monthly report.</p></div>
+<div><h3>Leave, advance and bill requests</h3><p>Workers send requests with a bill photo. You approve or reject in a tap, and the decision is recorded.</p></div>
+<div><h3>Many branches, one owner view</h3><p>Add branches and departments, see cost for each, and send a broadcast message to all staff or one branch. Download the salary sheet as CSV.</p></div>
+</div></div></section>
 
-<!-- ========== HERO ========== -->
-<section class="hero-section" id="home">
-  <div class="hero-bg-shapes">
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
-    <div class="shape shape-3"></div>
-  </div>
-  <div class="container">
-    <div class="row align-items-center min-vh-hero">
-      <div class="col-lg-6 hero-content" data-aos>
-        <div class="hero-badge"><i class="ri-shield-check-fill"></i> Trusted by Indian Businesses</div>
-        <h1 class="hero-title">Manage Your Staff, Salary & Attendance <span class="gradient-text">in One Place</span></h1>
-        <p class="hero-sub">TankhaBook is your all-in-one solution for employee management, payroll, attendance tracking, and business ledger — built specifically for Indian SMEs.</p>
-        <div class="hero-cta d-flex flex-wrap gap-3">
-          <a href="#contact" class="btn btn-primary-custom btn-lg">
-            <i class="ri-rocket-line me-2"></i>Start Free
-          </a>
-          <a href="https://wa.me/919234986070" target="_blank" class="btn btn-whatsapp btn-lg">
-            <i class="ri-whatsapp-line me-2"></i>Chat on WhatsApp
-          </a>
-        </div>
-        <div class="hero-stats d-flex gap-4 mt-4">
-          <div class="stat"><strong>500+</strong><span>Businesses</span></div>
-          <div class="stat-divider"></div>
-          <div class="stat"><strong>10k+</strong><span>Employees</span></div>
-          <div class="stat-divider"></div>
-          <div class="stat"><strong>4.8★</strong><span>Rating</span></div>
-        </div>
-      </div>
-      <div class="col-lg-6 hero-visual mt-5 mt-lg-0" data-aos data-aos-delay="200">
-        <div class="dashboard-mockup">
-          <div class="mockup-header">
-            <div class="mockup-dots"><span></span><span></span><span></span></div>
-            <div class="mockup-title">TankhaBook Dashboard</div>
-          </div>
-          <div class="mockup-body">
-            <div class="mockup-card blue">
-              <div class="mc-icon"><i class="ri-team-line"></i></div>
-              <div><div class="mc-num">48</div><div class="mc-label">Employees</div></div>
-            </div>
-            <div class="mockup-card green">
-              <div class="mc-icon"><i class="ri-calendar-check-line"></i></div>
-              <div><div class="mc-num">92%</div><div class="mc-label">Attendance</div></div>
-            </div>
-            <div class="mockup-card orange">
-              <div class="mc-icon"><i class="ri-money-rupee-circle-line"></i></div>
-              <div><div class="mc-num">₹2.4L</div><div class="mc-label">Payroll</div></div>
-            </div>
-            <div class="mockup-chart">
-              <div class="chart-label">Monthly Payroll Trend</div>
-              <div class="chart-bars">
-                <div class="bar" style="--h:55%"><span>J</span></div>
-                <div class="bar" style="--h:70%"><span>F</span></div>
-                <div class="bar" style="--h:60%"><span>M</span></div>
-                <div class="bar active" style="--h:85%"><span>A</span></div>
-                <div class="bar" style="--h:75%"><span>M</span></div>
-                <div class="bar" style="--h:90%"><span>J</span></div>
-              </div>
-            </div>
-            <div class="mockup-list">
-              <div class="ml-title">Recent Payments</div>
-              <div class="ml-item"><div class="ml-avatar" style="background:#e8f4fd">R</div><div><div class="ml-name">Rahul Sharma</div><div class="ml-role">Developer</div></div><div class="ml-amount">₹32,000</div></div>
-              <div class="ml-item"><div class="ml-avatar" style="background:#fde8f4">P</div><div><div class="ml-name">Priya Singh</div><div class="ml-role">Manager</div></div><div class="ml-amount">₹45,000</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="sec band" id="how"><div class="w" style="display:block"><h2>Three steps, every day</h2>
+<div class="steps"><div><h3>Mark</h3><p>Supervisors mark attendance, overtime and pieces, or workers punch in themselves.</p></div><div><h3>Review</h3><p>Approve leave, advance and bill requests. The dashboard shows who is in and who is absent.</p></div><div><h3>Pay</h3><p>Open the month's report, download the salary sheet and send each worker their slip.</p></div></div></div></section>
 
-<!-- ========== FEATURES ========== -->
-<section class="features-section section-pad" id="features">
-  <div class="container">
-    <div class="section-header text-center" data-aos>
-      <div class="section-tag">Everything You Need</div>
-      <h2 class="section-title">Powerful Features for <span class="gradient-text">Modern Businesses</span></h2>
-      <p class="section-sub">From hiring to salary — TankhaBook handles everything so you don't have to.</p>
-    </div>
-    <div class="row g-4 mt-3">
-      <div class="col-md-6 col-lg-4" data-aos data-aos-delay="100">
-        <div class="feature-card">
-          <div class="fc-icon" style="--ic:#3b82f6;--ib:#eff6ff"><i class="ri-group-line"></i></div>
-          <h5>Employee Management</h5>
-          <p>Add, manage, and track all your employees with complete profiles, documents, and history in one dashboard.</p>
-          <div class="fc-tag">Core Feature</div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4" data-aos data-aos-delay="150">
-        <div class="feature-card">
-          <div class="fc-icon" style="--ic:#10b981;--ib:#ecfdf5"><i class="ri-calendar-check-2-line"></i></div>
-          <h5>Attendance Tracking</h5>
-          <p>Mark attendance manually or auto-import. Track present, absent, late, and half-days with real-time reports.</p>
-          <div class="fc-tag">Popular</div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4" data-aos data-aos-delay="200">
-        <div class="feature-card">
-          <div class="fc-icon" style="--ic:#f59e0b;--ib:#fffbeb"><i class="ri-money-rupee-circle-line"></i></div>
-          <h5>Payroll System</h5>
-          <p>Auto-calculate salaries with deductions, advances, bonuses. Generate payslips in one click. PF/ESI ready.</p>
-          <div class="fc-tag">Core Feature</div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4" data-aos data-aos-delay="250">
-        <div class="feature-card">
-          <div class="fc-icon" style="--ic:#8b5cf6;--ib:#f5f3ff"><i class="ri-book-2-line"></i></div>
-          <h5>Ledger / Khata</h5>
-          <p>Maintain a digital Khata for each employee. Track advances, dues, payments, and balances in real time.</p>
-          <div class="fc-tag">Unique</div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4" data-aos data-aos-delay="300">
-        <div class="feature-card">
-          <div class="fc-icon" style="--ic:#ef4444;--ib:#fef2f2"><i class="ri-bar-chart-2-line"></i></div>
-          <h5>Reports & Analytics</h5>
-          <p>Download monthly payroll reports, attendance summaries, and tax reports in PDF/Excel format anytime.</p>
-          <div class="fc-tag">Smart</div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4" data-aos data-aos-delay="350">
-        <div class="feature-card">
-          <div class="fc-icon" style="--ic:#0ea5e9;--ib:#f0f9ff"><i class="ri-notification-3-line"></i></div>
-          <h5>Smart Alerts</h5>
-          <p>Get notified for salary due dates, low attendance, pending advances, and important deadlines via SMS/email.</p>
-          <div class="fc-tag">New</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="sec demo" id="demo"><div class="w"><div>
+<h2>Request a demo, then run it yourself</h2>
+<p class="lead" style="margin-top:14px">The phone on this page is the real Tankhabook app with sample workers. Pick a view, tap around, change attendance, open a salary slip.</p>
+<div class="seg" role="group" aria-label="Choose demo view"><button class="btn" id="b-m" aria-pressed="true">Owner view</button><button class="btn o" id="b-s" aria-pressed="false">Worker view</button><button class="btn o" id="b-r">Reset demo data</button></div>
+<ul class="cred"><li>Owner login: <code>admin</code> / <code>admin123</code></li><li>Manager login: <code>manager</code> / <code>mgr123</code></li><li>Worker login: mobile <code>9876500001</code>, PIN <code>0001</code></li></ul>
+<p class="mut">Demo changes stay on your device only. Want it set up for your factory?</p>
+<form id="f"><label>Your name<input name="n" required autocomplete="name"></label><label>Company or factory<input name="c" required autocomplete="organization"></label><label>How many workers?<select name="w"><option>Under 25</option><option>25 to 100</option><option>100 to 500</option><option>500+</option></select></label><label>Phone number<input name="p" type="tel" required autocomplete="tel"></label><button class="btn" type="submit">Request my demo</button></form>
+<p id="out" hidden role="status"></p></div>
+<div class="phone"><iframe id="fr" title="Tankhabook live demo"></iframe></div></div></section>
 
-<!-- ========== APP SHOWCASE ========== -->
-<section class="showcase-section section-pad" id="app">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-5" data-aos>
-        <div class="section-tag">Mobile First</div>
-        <h2 class="section-title">Manage On the Go with Our <span class="gradient-text">Mobile App</span></h2>
-        <p class="section-sub mb-4">Access everything from your phone — mark attendance, approve payroll, and check reports anytime, anywhere.</p>
-        <ul class="app-features-list">
-          <li><i class="ri-checkbox-circle-fill"></i> One-tap attendance marking</li>
-          <li><i class="ri-checkbox-circle-fill"></i> Instant payslip generation</li>
-          <li><i class="ri-checkbox-circle-fill"></i> Real-time salary tracking</li>
-          <li><i class="ri-checkbox-circle-fill"></i> Works on low-end Android too</li>
-        </ul>
-        <div class="d-flex gap-3 mt-4">
-          <a href="#contact" class="btn btn-primary-custom"><i class="ri-google-play-line me-2"></i>Google Play</a>
-          <a href="#contact" class="btn btn-outline-custom"><i class="ri-apple-line me-2"></i>App Store</a>
-        </div>
-      </div>
-      <div class="col-lg-7" data-aos data-aos-delay="200">
-        <div class="phone-showcase">
-          <div class="phone-frame main-phone">
-            <div class="phone-screen">
-              <div class="ps-header">
-                <span>TankhaBook</span>
-                <i class="ri-notification-3-line"></i>
-              </div>
-              <div class="ps-greeting">Good Morning, Ramesh 👋</div>
-              <div class="ps-cards">
-                <div class="ps-card blue"><i class="ri-user-3-line"></i><div><strong>48</strong><small>Employees</small></div></div>
-                <div class="ps-card green"><i class="ri-checkbox-circle-line"></i><div><strong>44</strong><small>Present</small></div></div>
-              </div>
-              <div class="ps-section-title">Today's Attendance</div>
-              <div class="ps-att-list">
-                <div class="ps-att-item"><div class="ps-att-dot green"></div><span>Ramesh Kumar</span><span class="ms-auto text-success small">Present</span></div>
-                <div class="ps-att-item"><div class="ps-att-dot red"></div><span>Suresh Yadav</span><span class="ms-auto text-danger small">Absent</span></div>
-                <div class="ps-att-item"><div class="ps-att-dot yellow"></div><span>Meena Devi</span><span class="ms-auto text-warning small">Late</span></div>
-              </div>
-              <div class="ps-btn">Mark Attendance</div>
-            </div>
-          </div>
-          <div class="phone-frame side-phone">
-            <div class="phone-screen">
-              <div class="ps-header small"><span>Payroll</span><i class="ri-download-line"></i></div>
-              <div class="ps-month">May 2025</div>
-              <div class="ps-payroll-card">
-                <div class="pp-row"><span>Basic Salary</span><strong>₹25,000</strong></div>
-                <div class="pp-row"><span>HRA</span><strong>₹8,000</strong></div>
-                <div class="pp-row deduct"><span>PF Deduction</span><strong>-₹3,000</strong></div>
-                <div class="pp-divider"></div>
-                <div class="pp-row total"><span>Net Salary</span><strong>₹30,000</strong></div>
-              </div>
-              <div class="ps-btn green-btn">Download Payslip</div>
-            </div>
-          </div>
-          <div class="phone-glow"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="sec band" id="industries"><div class="w" style="display:block"><h2>Built for the way your business runs</h2><div class="ind" role="tablist" id="it"></div><div class="ip" aria-live="polite"><div><h3>The problem</h3><p id="ip1"></p></div><div><h3>With Tankhabook</h3><p id="ip2"></p></div></div></div></section>
+<section class="sec" id="why"><div class="w"><h2>Why not stay on registers and Excel?</h2><div class="cmpw"><table class="cmp"><tr><th></th><th>Paper register</th><th>Excel sheet</th><th>Tankhabook</th></tr><tr><td>Proof of attendance</td><td>Signature</td><td>Typed by hand</td><td>Location check and selfie</td></tr><tr><td>PF, ESI, overtime</td><td>Calculator</td><td>Formulas you maintain</td><td>Worked out for you</td></tr><tr><td>Salary slips</td><td>Handwritten</td><td>Copy and paste</td><td>One slip per worker</td></tr><tr><td>Many branches</td><td>Separate books</td><td>Separate files</td><td>One owner view</td></tr><tr><td>Worker requests</td><td>Verbal</td><td>Phone calls</td><td>Approve in the app</td></tr></table></div></div></section>
+<section class="sec band" id="pricing"><div class="w" style="display:block"><h2>Start free. Pay when you grow.</h2><p class="lead" style="margin-top:12px">No credit card to start. Slide to your team size and see which plan fits.</p>
+<div class="sw"><label for="sl">Workers</label><input type="range" id="sl" min="1" max="100" step="1" value="20"><b id="sn">20</b><span id="rc" role="status"></span></div>
+<div class="pl"><div id="pc0"><h3>Free</h3><p class="mut">For small teams getting started</p><b class="pp">₹0<small style="font:500 16px Hind"> /month</small></b><ul><li>Up to 5 employees</li><li>Basic attendance</li><li>Simple payroll</li><li>1 admin user</li></ul><a class="btn o" href="#demo">Start free</a></div>
+<div class="ft" id="pc1"><h3>Pro</h3><p class="mut">For growing businesses</p><b class="pp">₹499<small style="font:500 16px Hind"> /month</small></b><ul><li>Up to 50 employees</li><li>Advanced attendance</li><li>Full payroll with PF and ESI</li><li>3 admin users</li><li>Reports in PDF and Excel</li><li>Ledger / Khata</li></ul><a class="btn" href="https://wa.me/919693947417?text=Hi%20Tankhabook%2C%20I%20want%20the%20Pro%20plan.">Start Pro on WhatsApp</a></div>
+<div id="pc2"><h3>Enterprise</h3><p class="mut">For large organisations</p><b class="pp">Custom</b><ul><li>Unlimited employees and admins</li><li>Multi-branch support</li><li>Custom integrations</li><li>Priority support</li><li>Dedicated account manager</li></ul><a class="btn o" href="https://wa.me/919693947417?text=Hi%20Tankhabook%2C%20I%20need%20an%20Enterprise%20plan.">Talk to us</a></div></div>
+<p class="mut" style="margin-top:14px;font-size:15px">Prices in rupees per month.</p></div></section>
+<section class="sec band" id="trust"><div class="w" style="display:block"><h2>Built to be trusted</h2><div class="feat"><div><h3>Three levels of access</h3><p>Owner, manager and worker each see only what they need. Workers see their own attendance and slips.</p></div><div><h3>Location-checked attendance</h3><p>Punch-ins are tied to the branch location, with an optional selfie, so attendance has proof.</p></div><div><h3>Every approval is recorded</h3><p>Leave, advance and bill decisions stay in the app with the request, the reason and the result.</p></div><div><h3>Your data stays portable</h3><p>Download the salary sheet as CSV whenever you want. You are never locked in.</p></div></div>
+<div class="fd"><b>OM</b><p><b style="all:unset;font-weight:700">Built by Om Mishra in Jharkhand.</b> Message me directly on <a href="https://wa.me/919693947417">WhatsApp</a> or at <a href="mailto:om.mishra@tankhabook.com">om.mishra@tankhabook.com</a>. I read every enquiry myself.</p></div></div></section>
+<section class="sec" id="next"><div class="w"><h2>What we are building next</h2><p class="lead" style="margin-top:12px">These are planned and not live yet. Tell us which one matters most to you.</p><div class="rm"><div><span>Planned</span><h3>Salary slips on WhatsApp</h3><p>Send each worker their slip as a message when you close the month.</p></div><div><span>Planned</span><h3>Absence and overtime insights</h3><p>See which teams and days cost you the most, without building a report.</p></div><div><span>Planned</span><h3>Face-match punch-in</h3><p>Match the selfie to the worker, to stop buddy punching.</p></div></div></div></section>
+<section class="sec" id="faq"><div class="w"><h2>Questions owners ask first</h2><div style="margin-top:28px">
+<details><summary>Do my workers need to install anything?</summary><p>No. Tankhabook opens in the phone's browser, so a link is enough.</p></details>
+<details><summary>Can I try it without giving my details?</summary><p>Yes. The demo above runs on your device and needs no sign-up.</p></details>
+<details><summary>Does it handle contract and piece-rate workers?</summary><p>Yes. Each worker can be on daily wage, monthly salary or piece rate.</p></details>
+<details><summary>Can I get my data out?</summary><p>Yes. Download the monthly salary sheet as CSV at any time.</p></details>
+<details><summary>Is the Free plan really free?</summary><p>Yes. Free covers up to 5 employees with basic attendance and simple payroll. No credit card is needed.</p></details>
+<details><summary>How long does setup take?</summary><p>Add your workers and pay rates, then start marking attendance. Message us on WhatsApp and we will help you set up.</p></details>
+<details><summary>Does it work on a basic Android phone?</summary><p>It opens in the phone browser, so there is no app to install. Try the demo above on your own phone.</p></details></div></div></section>
 
-<!-- ========== WHY CHOOSE US ========== -->
-<section class="why-section section-pad" id="why">
-  <div class="container">
-    <div class="section-header text-center" data-aos>
-      <div class="section-tag">Why TankhaBook</div>
-      <h2 class="section-title">Built for <span class="gradient-text">Bharat's Businesses</span></h2>
-    </div>
-    <div class="row g-4 mt-3">
-      <div class="col-6 col-lg-3" data-aos data-aos-delay="100">
-        <div class="why-card">
-          <div class="why-num">01</div>
-          <div class="why-icon"><i class="ri-leaf-line"></i></div>
-          <h6>Simple to Use</h6>
-          <p>No training needed. If you can use WhatsApp, you can use TankhaBook.</p>
-        </div>
-      </div>
-      <div class="col-6 col-lg-3" data-aos data-aos-delay="150">
-        <div class="why-card">
-          <div class="why-num">02</div>
-          <div class="why-icon"><i class="ri-flashlight-line"></i></div>
-          <h6>Lightning Fast</h6>
-          <p>Pages load in under 1 second even on 3G connections across India.</p>
-        </div>
-      </div>
-      <div class="col-6 col-lg-3" data-aos data-aos-delay="200">
-        <div class="why-card">
-          <div class="why-num">03</div>
-          <div class="why-icon"><i class="ri-wallet-3-line"></i></div>
-          <h6>Affordable</h6>
-          <p>Starts free. Paid plans cheaper than a chai per day for your whole team.</p>
-        </div>
-      </div>
-      <div class="col-6 col-lg-3" data-aos data-aos-delay="250">
-        <div class="why-card">
-          <div class="why-num">04</div>
-          <div class="why-icon"><i class="ri-india-line"></i></div>
-          <h6>Made for India</h6>
-          <p>PF, ESI, TDS, regional holidays — everything tailored for Indian labour laws.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<footer><div class="w"><span><b>Tankhabook</b> · tankhabook.com<br>Made for factory owners and contractors in India</span><span><a href="tel:+919693947417">+91 96939 47417</a><br><a href="mailto:om.mishra@tankhabook.com">om.mishra@tankhabook.com</a><br><a href="https://wa.me/919693947417">Chat on WhatsApp</a></span></div></footer>
 
-<!-- ========== PRICING ========== -->
-<section class="pricing-section section-pad" id="pricing">
-  <div class="container">
-    <div class="section-header text-center" data-aos>
-      <div class="section-tag">Simple Pricing</div>
-      <h2 class="section-title">Transparent Plans, <span class="gradient-text">No Surprises</span></h2>
-      <p class="section-sub">Start free, scale when you're ready. No credit card required.</p>
-    </div>
-    <div class="row g-4 justify-content-center mt-3">
-      <div class="col-md-6 col-lg-4" data-aos data-aos-delay="100">
-        <div class="pricing-card">
-          <div class="pc-badge">Free</div>
-          <div class="pc-price">₹0<span>/month</span></div>
-          <div class="pc-title">Starter</div>
-          <div class="pc-subtitle">Perfect for small businesses</div>
-          <ul class="pc-features">
-            <li><i class="ri-check-line"></i> Up to 5 Employees</li>
-            <li><i class="ri-check-line"></i> Basic Attendance</li>
-            <li><i class="ri-check-line"></i> Simple Payroll</li>
-            <li><i class="ri-check-line"></i> 1 Admin User</li>
-            <li class="disabled"><i class="ri-close-line"></i> Reports Export</li>
-            <li class="disabled"><i class="ri-close-line"></i> Ledger / Khata</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline-custom w-100">Get Started Free</a>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4" data-aos data-aos-delay="150">
-        <div class="pricing-card featured">
-          <div class="pc-badge best">⭐ Best Value</div>
-          <div class="pc-price">₹499<span>/month</span></div>
-          <div class="pc-title">Pro</div>
-          <div class="pc-subtitle">For growing businesses</div>
-          <ul class="pc-features">
-            <li><i class="ri-check-line"></i> Up to 50 Employees</li>
-            <li><i class="ri-check-line"></i> Advanced Attendance</li>
-            <li><i class="ri-check-line"></i> Full Payroll + PF/ESI</li>
-            <li><i class="ri-check-line"></i> 3 Admin Users</li>
-            <li><i class="ri-check-line"></i> Reports Export (PDF/Excel)</li>
-            <li><i class="ri-check-line"></i> Ledger / Khata</li>
-          </ul>
-          <a href="#contact" class="btn btn-primary-custom w-100">Start Pro Plan</a>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4" data-aos data-aos-delay="200">
-        <div class="pricing-card">
-          <div class="pc-badge enterprise">Enterprise</div>
-          <div class="pc-price">Custom<span>/month</span></div>
-          <div class="pc-title">Business</div>
-          <div class="pc-subtitle">For large organisations</div>
-          <ul class="pc-features">
-            <li><i class="ri-check-line"></i> Unlimited Employees</li>
-            <li><i class="ri-check-line"></i> Multi-branch Support</li>
-            <li><i class="ri-check-line"></i> Custom Integrations</li>
-            <li><i class="ri-check-line"></i> Unlimited Admins</li>
-            <li><i class="ri-check-line"></i> Priority Support</li>
-            <li><i class="ri-check-line"></i> Dedicated Account Manager</li>
-          </ul>
-          <a href="https://wa.me/919234986070" target="_blank" class="btn btn-whatsapp w-100"><i class="ri-whatsapp-line me-2"></i>Contact Us</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== TESTIMONIALS ========== -->
-<section class="testimonials-section section-pad" id="testimonials">
-  <div class="container">
-    <div class="section-header text-center" data-aos>
-      <div class="section-tag">Customer Stories</div>
-      <h2 class="section-title">What Our <span class="gradient-text">Customers Say</span></h2>
-    </div>
-    <div class="row g-4 mt-3">
-      <div class="col-md-4" data-aos data-aos-delay="100">
-        <div class="testimonial-card">
-          <div class="tc-stars">★★★★★</div>
-          <p>"TankhaBook ne humara poora attendance aur salary ka kaam aasaan kar diya. Pehle ghanto lagte the, ab 10 minute mein ho jaata hai!"</p>
-          <div class="tc-author">
-            <div class="tc-avatar" style="background:#dbeafe;color:#3b82f6">R</div>
-            <div><strong>Rajesh Gupta</strong><small>Factory Owner, Ranchi</small></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4" data-aos data-aos-delay="150">
-        <div class="testimonial-card featured-tc">
-          <div class="tc-stars">★★★★★</div>
-          <p>"Best software for small business. Payslip generation is super fast and employees love getting it on WhatsApp. Highly recommend!"</p>
-          <div class="tc-author">
-            <div class="tc-avatar" style="background:#dcfce7;color:#16a34a">S</div>
-            <div><strong>Sunita Mahato</strong><small>Garment Shop, Jamshedpur</small></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4" data-aos data-aos-delay="200">
-        <div class="testimonial-card">
-          <div class="tc-stars">★★★★★</div>
-          <p>"Earlier we managed everything on paper. TankhaBook shifted us 100% digital. The ledger/khata feature is exactly what we needed."</p>
-          <div class="tc-author">
-            <div class="tc-avatar" style="background:#fef9c3;color:#ca8a04">A</div>
-            <div><strong>Anil Pandey</strong><small>Construction Business, Patna</small></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== CONTACT ========== -->
-<section class="contact-section section-pad" id="contact">
-  <div class="container">
-    <div class="row g-5 align-items-center">
-      <div class="col-lg-5" data-aos>
-        <div class="section-tag">Get In Touch</div>
-        <h2 class="section-title">Ready to Get <span class="gradient-text">Started?</span></h2>
-        <p class="section-sub">Fill the form and our team will contact you within 24 hours. Or reach us directly:</p>
-        <div class="contact-info-list">
-          <a href="tel:9234986070" class="contact-info-item">
-            <div class="ci-icon" style="--c:#3b82f6"><i class="ri-phone-line"></i></div>
-            <div><strong>Call Us</strong><span>+91 92349 86070</span></div>
-          </a>
-          <a href="https://wa.me/919234986070" target="_blank" class="contact-info-item">
-            <div class="ci-icon" style="--c:#25d366"><i class="ri-whatsapp-line"></i></div>
-            <div><strong>WhatsApp</strong><span>Chat with us instantly</span></div>
-          </a>
-          <a href="mailto:support@tankhabook.com" class="contact-info-item">
-            <div class="ci-icon" style="--c:#f59e0b"><i class="ri-mail-line"></i></div>
-            <div><strong>Email</strong><span>support@tankhabook.com</span></div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-7" data-aos data-aos-delay="150">
-        <div class="contact-form-card">
-          <h5 class="mb-4">Send Enquiry</h5>
-          <div id="formMsg" class="form-message d-none"></div>
-          <div id="enquiryForm">
-            <div class="mb-3">
-              <label class="form-label">Your Name *</label>
-              <input type="text" id="f_name" class="form-control custom-input" placeholder="e.g. Ramesh Kumar" required />
-            </div>
-            <div class="mb-3">
-              <input type="hidden" id="f_honeypot" name="website" value="" />
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Phone Number *</label>
-              <input type="tel" id="f_phone" class="form-control custom-input" placeholder="e.g. 9876543210" maxlength="10" required />
-            </div>
-            <div class="mb-4">
-              <label class="form-label">Message</label>
-              <textarea id="f_message" class="form-control custom-input" rows="4" placeholder="Tell us about your business and needs..."></textarea>
-            </div>
-            <button type="button" id="submitBtn" class="btn btn-primary-custom w-100 btn-lg" onclick="submitEnquiry()">
-              <span id="btnText"><i class="ri-send-plane-line me-2"></i>Send Enquiry</span>
-              <span id="btnLoader" class="d-none"><i class="ri-loader-4-line spin me-2"></i>Sending...</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== FOOTER ========== -->
-<footer class="footer">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-lg-4">
-        <div class="footer-brand">
-          <span class="brand-icon">T</span>ankha<span class="brand-accent">Book</span>
-        </div>
-        <p class="footer-desc">India's simplest payroll, attendance & ledger software for small and medium businesses.</p>
-        <div class="d-flex gap-3 mt-3">
-          <a href="https://wa.me/919234986070" target="_blank" class="footer-social wa"><i class="ri-whatsapp-line"></i></a>
-          <a href="mailto:support@tankhabook.com" class="footer-social mail"><i class="ri-mail-line"></i></a>
-          <a href="tel:9234986070" class="footer-social phone"><i class="ri-phone-line"></i></a>
-        </div>
-      </div>
-      <div class="col-6 col-lg-2">
-        <h6 class="footer-heading">Product</h6>
-        <ul class="footer-links">
-          <li><a href="#features">Features</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#app">Mobile App</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-lg-2">
-        <h6 class="footer-heading">Company</h6>
-        <ul class="footer-links">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#">Blog</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-4">
-        <h6 class="footer-heading">Contact</h6>
-        <div class="footer-contact">
-          <div><i class="ri-phone-line"></i> <a href="tel:9234986070">+91 92349 86070</a></div>
-          <div><i class="ri-mail-line"></i> <a href="mailto:support@tankhabook.com">support@tankhabook.com</a></div>
-          <div><i class="ri-map-pin-line"></i> Jharkhand, India</div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 TankhaBook. All rights reserved.</p>
-      <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Refund Policy</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- ========== FLOATING BUTTONS ========== -->
-<div class="floating-buttons">
-  <a href="https://wa.me/919234986070" target="_blank" class="float-btn wa-btn" title="Chat on WhatsApp">
-    <i class="ri-whatsapp-line"></i>
-    <span class="float-label">WhatsApp</span>
-  </a>
-  <a href="tel:9234986070" class="float-btn call-btn" title="Call Us">
-    <i class="ri-phone-line"></i>
-    <span class="float-label">Call Now</span>
-  </a>
-  <a href="mailto:support@tankhabook.com" class="float-btn email-btn" title="Email Us">
-    <i class="ri-mail-line"></i>
-    <span class="float-label">Email</span>
-  </a>
-</div>
-
-<!-- Dark Mode Toggle -->
-<button class="dark-toggle" id="darkToggle" title="Toggle Dark Mode">
-  <i class="ri-moon-line" id="darkIcon"></i>
-</button>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
-</body>
-</html>
+<a class="fab" href="https://wa.me/919693947417?text=Hi%20Tankhabook" aria-label="Chat on WhatsApp">WhatsApp</a>
+<script type="text/plain" id="proto"><!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tankhabook – Factory attendance & salary</title>
+<style>
+:root{--bg:#f3efe6;--ink:#1d2a2a;--mut:#5d6b69;--card:#fffdf8;--line:#d9d2c0;--acc:#0d6b5c;--on:#fff;--warn:#c4571b;--bad:#a8322d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141a19;--ink:#ece8dc;--mut:#9aa8a5;--card:#1d2625;--line:#33403e;--acc:#3fc2a8;--on:#0b1412;--warn:#e88a55;--bad:#e8736d}}
+:root[data-theme="dark"]{--bg:#141a19;--ink:#ece8dc;--mut:#9aa8a5;--card:#1d2625;--line:#33403e;--acc:#3fc2a8;--on:#0b1412;--warn:#e88a55;--bad:#e8736d}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}*{box-sizing:border-box}
+body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:"Hind","Noto Sans Devanagari",system-ui,sans-serif;line-height:1.45}
+#app{max-width:460px;margin:0 auto;height:100%;display:flex;flex-direction:column;border-inline:1px solid var(--line)}
+.top{background:var(--acc);color:var(--on);padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
+.top b{font-family:"Arvo",Georgia,serif;font-size:19px}.top small{display:block;opacity:.85}
+.top button{background:none;border:1px solid currentColor;color:inherit;border-radius:12px;padding:2px 10px;cursor:pointer;font:inherit;font-size:12px}
+#scr{flex:1;overflow-y:auto;padding:12px}
+.tabs{display:flex;overflow-x:auto;border-top:1px solid var(--line);background:var(--card)}
+.tabs button{flex:0 0 auto;padding:12px 11px;white-space:nowrap;border:0;background:none;color:var(--mut);font:inherit;font-size:12px;cursor:pointer}
+.tabs button[aria-selected=true]{color:var(--acc);font-weight:700;box-shadow:inset 0 3px 0 var(--acc)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.st,.row{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px}.st{text-align:center}.row{margin-bottom:8px}
+.st b{display:block;font-size:22px}.st span,.m{font-size:12px;color:var(--mut)}
+.rt,.ln{display:flex;justify-content:space-between;align-items:baseline;gap:8px}.ln{font-size:13px;color:var(--mut)}
+.net{font-family:"Arvo",Georgia,serif;font-size:19px;color:var(--acc)}
+.mk{display:flex;gap:6px;margin-top:8px}
+.mk button,.sm{padding:7px 10px;border:1px solid var(--line);background:none;color:var(--ink);border-radius:6px;font:inherit;font-size:13px;cursor:pointer}
+.mk button{flex:1}.mk .on{background:var(--acc);border-color:var(--acc);color:var(--on)}.mk .on.a{background:var(--bad);border-color:var(--bad);color:#fff}.mk .on.h{background:var(--warn);border-color:var(--warn);color:#fff}
+.ot{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:13px;color:var(--mut)}.ot .sm{width:30px;padding:3px}
+input,select{padding:7px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:inherit;max-width:100%}
+.num{width:78px;text-align:right}
+.btn{width:100%;padding:11px;border:0;border-radius:8px;background:var(--ink);color:var(--bg);font:inherit;cursor:pointer;margin:6px 0;text-align:center;text-decoration:none;display:block}
+.btn.p{background:var(--acc);color:var(--on)}
+.f{display:grid;gap:8px}.f label{display:grid;gap:3px;font-size:12px;color:var(--mut)}
+.chk{display:flex;align-items:center;gap:8px;padding:6px 0}
+h3{font-family:"Arvo",Georgia,serif;margin:12px 0 6px;font-size:16px}
+.slip{border:2px dashed var(--ink);border-radius:8px;padding:12px;background:var(--card);margin-bottom:10px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center;font-size:12px}.cal div{padding:6px 0;border-radius:6px;border:1px solid var(--line)}.bar{height:8px;border-radius:4px;background:var(--acc)}.tg{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tl{border:0;border-radius:16px;padding:16px 6px;font:inherit;font-size:17px;font-weight:700;color:#fff;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;line-height:1.2}.tl.b{padding:26px 6px;font-size:21px}.tl.b span{font-size:44px}.tl span{font-size:32px}.big input,.big select{font-size:18px;padding:12px}.big label{font-size:15px}.tag{font-size:11px;border:1px solid var(--line);border-radius:10px;padding:0 8px;color:var(--mut)}
+</style></head><body><div id="app">
+<div class="top"><div><small id="dt"></small><b id="ttl"></b></div><button id="lg">हिं / EN</button></div>
+<input type="file" id="bill" accept="image/*" capture="environment" hidden><input type="file" id="selfie" accept="image/*" capture="user" hidden><div id="scr"></div><div class="tabs" role="tablist" id="tabs"></div></div>
+<script>
+var D={tabs:[["Home","होम"],["Attendance","हाज़िरी"],["Workers","मज़दूर"],["Salary","तनख्वाह"],["Punch","पंच"],["Settings","सेटिंग"]],
+pr:["Present","हाज़िर"],ab:["Absent","गैर"],hf:["Half","आधा"],ot:["Overtime hrs","ओवरटाइम घंटे"],adv:["Advance","एडवांस"],
+tot:["Payable this month","इस महीने देय"],wk:["Workers","मज़दूर"],pcs:["Pieces made","बने पीस"],mall:["Mark all present","सब हाज़िर"],
+add:["Add worker","मज़दूर जोड़ें"],nm:["Name","नाम"],ph:["WhatsApp number","व्हाट्सऐप नंबर"],ty:["Pay type","पेमेंट प्रकार"],rt:["Rate (Rs)","रेट (Rs)"],
+dl:["Daily wage","दिहाड़ी"],mo:["Monthly salary","मासिक"],pc:["Piece rate","पीस रेट"],del:["Remove","हटाएं"],sl:["Salary slip","सैलरी स्लिप"],
+wa:["Send on WhatsApp","व्हाट्सऐप पर भेजें"],cl:["Close","बंद करें"],co:["Company name","कंपनी का नाम"],pf:["Cut PF (12%, up to Rs 15,000)","PF काटें (12%)"],
+es:["Cut ESI (0.75%, gross up to Rs 21,000)","ESI काटें (0.75%)"],om:["Overtime pay multiple","ओवरटाइम गुना"],gr:["Gross","कुल कमाई"],nt:["Net pay","हाथ में"],
+dy:["Days","दिन"],none:["Not marked today","आज नहीं लगी"],rs:["Reset demo data","डेमो डेटा रीसेट"],pi:["Punch in","पंच इन"],po:["Punch out","पंच आउट"],pw:["Who is punching","कौन पंच कर रहा"],pm:["Punch allowed","पंच कहाँ से"],any:["Anywhere","कहीं से भी"],site:["Only at factory area","सिर्फ फैक्टरी एरिया"],
+sn:["Area name","एरिया का नाम"],sr:["Radius (metres)","दायरा (मीटर)"],ss:["Set area to my current location","मेरी लोकेशन को एरिया बनाएं"],rp:["Punching report","पंचिंग रिपोर्ट"],fi:["First in","पहला इन"],lo:["Last out","आखिरी आउट"],hr:["Hours","घंटे"],
+in:["Inside area","एरिया में"],out:["Outside area – rejected","एरिया के बाहर – रद्द"],ok:["Accepted","मंज़ूर"],sim1:["Demo: at factory","डेमो: फैक्टरी पर"],sim2:["Demo: away from factory","डेमो: फैक्टरी से दूर"],map:["Map","नक्शा"],gf:["Location not available here. Use a demo location:","लोकेशन नहीं मिली। डेमो लोकेशन चुनें:"],
+ps:["Punched in","पंच इन"],npn:["Not punched","पंच नहीं"],lt:["Late","लेट"],mp:["Staff punch locations","स्टाफ की पंच लोकेशन"],wo:["Working","काम पर"],dn:["Left","निकल गए"],sim:["Staff phone simulator (test)","स्टाफ फोन सिम्युलेटर (टेस्ट)"],sh:["Shift start (late after)","शिफ्ट शुरू (इसके बाद लेट)"],
+lgn:["Log in","लॉगिन"],mgr:["I am the manager","मैं मैनेजर हूँ"],stf:["Staff login","स्टाफ लॉगिन"],pin:["PIN (last 4 digits of phone)","पिन (फोन के आखिरी 4 अंक)"],bad:["Number or PIN not found","नंबर या पिन गलत"],lgo:["Log out","लॉग आउट"],br:["Branches","ब्रांच"],ab2:["Add branch","ब्रांच जोड़ें"],lvs:["Share live location while on duty","ड्यूटी में लाइव लोकेशन भेजें"],nos:["Skip selfie (test)","सेल्फी छोड़ें (टेस्ट)"],lv:["Live","लाइव"],cld:["Cloud sync ON – staff and manager phones share data","क्लाउड सिंक चालू"],loc:["Cloud sync off – data on this phone only","क्लाउड बंद – सिर्फ इसी फोन में"],all:["Open all on Google Maps","सब गूगल मैप में खोलें"],hi:["Hello","नमस्ते"],tdp:["Today's punches","आज की पंचिंग"],bn:["Branch","ब्रांच"],
+sv:["Saved on this device","इस फोन में सेव"]};
+var L=0,tab="home",slip=null,day=new Date().toISOString().slice(0,10),mon=day.slice(0,7);
+function t(k){return D[k][L]}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function inr(n){return "Rs "+Math.round(n).toLocaleString("en-IN")}
+function seed(){var d=day;return{co:"Sharma Auto Parts",pf:true,es:true,om:2,
+W:[{id:1,n:"Ramesh Yadav",ph:"9876500001",ty:"d",r:520,a:500},{id:2,n:"Sunita Devi",ph:"9876500002",ty:"m",r:13000,a:0},{id:3,n:"Mohd. Irfan",ph:"9876500003",ty:"d",r:600,a:1000},{id:4,n:"Pappu Kumar",ph:"9876500004",ty:"p",r:4.5,a:0},{id:5,n:"Anita Kumari",ph:"9876500005",ty:"d",r:430,a:200}],
+A:{},O:{},Q:{},nid:6,P:[],pm:"any",site:{n:"Main gate",lat:25.5941,lng:85.1376,r:200}}}
+var S;try{S=JSON.parse(localStorage.getItem("tb1"))}catch(e){}
+if(!S||!S.W){S=seed();fill()}
+mig();var pmsg="",gf=0,pw=0;
+function dist(a,b,c,d){var R=6371000,q=Math.PI/180,x=(c-a)*q,y=(d-b)*q,h=Math.sin(x/2)*Math.sin(x/2)+Math.cos(a*q)*Math.cos(c*q)*Math.sin(y/2)*Math.sin(y/2);return 2*R*Math.asin(Math.sqrt(h))}
+function dk(ts){return new Date(ts).toISOString().slice(0,10)}
+function tmf(ts){return new Date(ts).toLocaleTimeString("en-IN",{hour:"2-digit",minute:"2-digit"})}
+function demoP(){var n=new Date(),L1=[[8,48,17,35,.0003],[9,5,17,40,-.0004],[9,52,0,0,.006],[8,30,17,5,.0002],[0,0,0,0,0]];S.W.forEach(function(w,i){var c=L1[i%5],si=SI(w.id);if(!c[0])return;var m=function(h,mi){var d=new Date(n);d.setHours(h,mi,0,0);return d.getTime()},la=si.lat+c[4],ln=si.lng+c[4]*.7,d=Math.round(dist(la,ln,si.lat,si.lng)),ok=S.pm=="any"||d<=si.r;S.P.push({w:w.id,t:m(c[0],c[1]),ty:"in",la:la,ln:ln,ok:ok,d:d,i:d<=si.r,sid:si.id,im:""});if(c[2])S.P.push({w:w.id,t:m(c[2],c[3]),ty:"out",la:la,ln:ln,ok:ok,d:d,i:d<=si.r,sid:si.id,im:""})});save()}
+if(!S.P.length)demoP();
+function doPunch(ty,la,ln){var w=me||pw,si=SI(w),d=Math.round(dist(la,ln,si.lat,si.lng)),ins=d<=si.r,ok=S.pm=="any"||ins,now=Date.now();addP({w:+w,t:now,ty:ty,la:la,ln:ln,ok:ok,d:d,i:ins,sid:si.id,im:img});img="";pmsg=ok?t("ok")+" · "+tmf(now):t("out")+" ("+d+" m)";gf=0;render()}
+function getPos(ty){if(!S.pol.loc){addP({w:+me,t:Date.now(),ty:ty,la:0,ln:0,ok:true,d:0,i:true,sid:SI(me).id,im:img});img="";pmsg=t("ok")+" · "+tmf(Date.now());render();return}pmsg="…";render();if(!navigator.geolocation){gf=ty;pmsg="";return render()}navigator.geolocation.getCurrentPosition(function(p){doPunch(ty,p.coords.latitude,p.coords.longitude)},function(){gf=ty;pmsg="";render()},{enableHighAccuracy:true,timeout:8000})}
+function fill(){var m=mon,h={};S.W.forEach(function(w,i){for(var k=1;k<day.slice(8)*1;k++){var dd=m+"-"+(k<10?"0"+k:k);if(new Date(dd).getDay()==0)continue;(S.A[dd]=S.A[dd]||{})[w.id]=(k+i)%9==0?"A":(k+i)%11==0?"H":"P";if(w.ty=="p")(S.Q[dd]=S.Q[dd]||{})[w.id]=80+(k*7+i)%40}})}
+var ar="admin";try{ar=localStorage.getItem("tba")||"admin"}catch(e){}
+var AK=["home","att","wk","sal","pun","ros","req","msg","rep","set"],MK=["home","att","wk","pun","ros","req","msg"],SK=["shome","scal","ssal","sros","smsg","sleave","sadv","srb"];
+var TN={home:["Dashboard","डैशबोर्ड"],att:["Attendance","हाज़िरी"],wk:["Staff","स्टाफ"],sal:["Payroll","पेरोल"],pun:["Punching","पंचिंग"],ros:["Roster","रोस्टर"],req:["Requests","रिक्वेस्ट"],msg:["Broadcast","संदेश"],rep:["Reports","रिपोर्ट"],set:["Settings","सेटिंग"],shome:["Home","होम"],scal:["Calendar","कैलेंडर"],ssal:["Salary","सैलरी"],sros:["Roster","रोस्टर"],smsg:["Inbox","इनबॉक्स"],sreq:["Leave","छुट्टी"]};
+function T2(a,b){return L?b:a}
+function W1(id){return S.W.filter(function(x){return x.id==id})[0]}
+function pad(n){return n<10?"0"+n:""+n}
+function shN(id){var z=S.sh.filter(function(x){return x.id==id})[0];return z?z.n+" "+z.s+"–"+z.e:T2("Day off","छुट्टी")}
+function keys(){return role=="s"?SK:ar=="admin"?AK:MK}
+function tabsBar(){var tb=document.getElementById("tabs");if(!role||role=="s"){tb.innerHTML="";if(role=="s"&&SK.indexOf(tab)<0)tab="shome";return}var k=keys();if(k.indexOf(tab)<0)tab=k[0];tb.innerHTML=k.map(function(x){return'<button role="tab" aria-selected="'+(x==tab)+'" data-tab="'+x+'">'+TN[x][L]+'</button>'}).join("")}
+function addRQ(r){if(db)db.collection("reqs").add(r).catch(function(){});else{r.id=""+Date.now();S.RQ.push(r);save()}}
+function decide(id,st){var r=S.RQ.filter(function(x){return x.id==id})[0];if(!r)return;if(st=="a"){var w=W1(r.w);if(r.ty=="adv"&&w)w.a+=r.amt;if(r.ty=="rb"&&w)w.re=(w.re||0)+r.amt;if(r.ty=="leave"){var d=new Date(r.from);for(var k=0;k<20;k++){var ds=d.toISOString().slice(0,10);if(ds>r.to)break;(S.A[ds]=S.A[ds]||{})[r.w]="L";d.setDate(d.getDate()+1)}}}if(db)db.collection("reqs").doc(id).update({st:st}).catch(function(){});else r.st=st;save()}
+var bimg="";function tile(ic,lb,bg,at,big){return'<button class="tl'+(big?" b":"")+'" style="background:'+bg+'" '+at+'><span aria-hidden="true">'+ic+'</span>'+lb+'</button>'}
+function rqTxt(r){return r.ty=="adv"?inr(r.amt):r.ty=="rb"?(r.cat||"")+" "+inr(r.amt):r.from+" → "+r.to}
+function rqTag(r){return r.ty=="adv"?T2("Advance","एडवांस"):r.ty=="rb"?T2("Reimbursement","रीइम्बर्समेंट"):T2("Leave","छुट्टी")}
+var db=null,lastJ="",LV={},role=null,me=0,bsel=1,pend="",img="",nosf=false,live=false,watch=0,lastL=0;
+try{role=localStorage.getItem("tbr");me=+localStorage.getItem("tbm")||0}catch(e){}
+function save(){try{localStorage.setItem("tb1",JSON.stringify(S))}catch(e){}if(db&&role=="m"){var q=Object.assign({},S);delete q.P;lastJ=JSON.stringify(q);db.doc("tb/main").set({j:lastJ,t:Date.now()}).catch(function(){})}}
+function rr(){var a=document.activeElement;if(a&&/INPUT|SELECT/.test(a.tagName))return;render()}
+function SI(id){var w=S.W.filter(function(x){return x.id==id})[0];return S.sites.filter(function(z){return z.id==(w&&w.b)})[0]||S.sites[0]}
+function addP(p){if(db)db.collection("punches").add(p).catch(function(){S.P.push(p);save()});else{S.P.push(p);save()}}
+function autoAtt(){var c=0;S.P.forEach(function(x){if(x.ok&&x.ty=="in"){var d=dk(x.t),m=S.A[d]=S.A[d]||{};if(!m[x.w]){m[x.w]="P";c=1}}});if(c)save()}
+function startLive(){stopLive();if(!navigator.geolocation||!db)return;watch=navigator.geolocation.watchPosition(function(p){var n=Date.now();if(n-lastL<15000)return;lastL=n;db.doc("live/"+me).set({w:me,la:p.coords.latitude,ln:p.coords.longitude,t:n}).catch(function(){})},function(){},{enableHighAccuracy:true})}
+function stopLive(){if(watch&&navigator.geolocation)navigator.geolocation.clearWatch(watch);watch=0}
+function mig(){S.pol=S.pol||{selfie:true,loc:true,live:false};S.sh=S.sh||[{id:1,n:"General",s:"09:00",e:"18:00"},{id:2,n:"Night",s:"22:00",e:"06:00"},{id:3,n:"Morning",s:"06:00",e:"14:00"}];S.R=S.R||{};S.RQ=S.RQ||[];S.hol=S.hol||[{d:"2026-10-20",n:"Dussehra"},{d:"2026-11-08",n:"Diwali"}];S.msgs=S.msgs||[{id:1,t:Date.now()-864e5,to:0,ti:"Welcome to Tankhabook",bo:"Punch in with a selfie at the gate. Salary slips appear here on the 1st.",by:"admin"}];S.W.forEach(function(w){w.d=w.d||["Production","Packing","Store","Quality","Production"][(w.id-1)%5];if(!S.R[w.id])S.R[w.id]=w.id==3?[2,2,2,2,2,2,0]:[1,1,1,1,1,1,0]});S.P=S.P||[];S.pm=S.pm||"any";S.ss=S.ss||"09:30";if(!S.sites)S.sites=[{id:1,n:"Main factory",lat:25.5941,lng:85.1376,r:200},{id:2,n:"Unit 2",lat:25.6012,lng:85.1511,r:250}];S.W.forEach(function(w){w.b=w.b||1})}
+function calc(w,m){var dys=0,ot=0,q=0;Object.keys(S.A).forEach(function(d){if(d.slice(0,7)!=m)return;var s=(S.A[d]||{})[w.id];dys+=s=="P"?1:s=="H"?.5:s=="L"?1:0;ot+=((S.O[d]||{})[w.id])||0;q+=((S.Q[d]||{})[w.id])||0});
+var base=w.ty=="d"?dys*w.r:w.ty=="m"?w.r/26*dys:q*w.r,hr=w.ty=="d"?w.r/8:w.ty=="m"?w.r/208:0,otp=ot*hr*S.om,g=base+otp;
+var pf=S.pf&&w.ty!="p"?Math.min(g,15000)*.12:0,es=S.es&&g<=21000?g*.0075:0;
+return{dys:dys,ot:ot,q:q,base:base,otp:otp,g:g,pf:pf,es:es,net:g-pf-es-w.a+(w.re||0)}}
+function set(m,d,id,v){(S[m][d]=S[m][d]||{})[id]=v;save()}
+function lgHTML(){return'<h3>'+esc(S.co)+'</h3><div class="row"><b>'+T2("Admin / Manager login","एडमिन / मैनेजर लॉगिन")+'</b><div class="f"><label>'+T2("Username","यूज़रनेम")+'<input id="lu" value="admin"></label><label>'+T2("Password","पासवर्ड")+'<input id="lw" type="password" value="admin123"></label><button class="btn p" data-act="lm">'+t("lgn")+'</button></div><div class="m">Demo: admin / admin123 · manager / mgr123</div></div><div class="row"><b>'+t("stf")+'</b><div class="f"><label>'+t("ph")+'<input id="lph" inputmode="numeric" value="9876500001"></label><label>'+t("pin")+'<input id="lpn" inputmode="numeric" value="0001"></label><button class="btn" data-act="ls">'+t("lgn")+'</button></div></div><p class="net" style="font-size:15px">'+esc(pmsg)+'</p><p class="m">'+(db?t("cld"):t("loc"))+'</p>'}
+function stHTML(){var w=W1(me);if(!w)return'<button class="btn" data-act="out">'+t("lgo")+'</button>';var si=SI(me),n=new Date(),tdy=dk(n.getTime()),dw=(n.getDay()+6)%7,Rr=S.R[me]||[],h="",mine=S.msgs.filter(function(m){return !m.to||m.to==w.b});if(S.pol.live&&db&&!watch)startLive();
+var LO='<button class="btn" data-act="out">'+t("lgo")+'</button>',BACK=tile("⬅",T2("Back","वापस"),"#44546a",'data-tab="shome"');
+if(tab=="shome"){var td=S.P.filter(function(x){return x.w==me&&dk(x.t)==tdy}).sort(function(a,b){return a.t-b.t}),nn=mine.filter(function(m){return Date.now()-m.t<2*864e5}).length;
+h+='<div class="row" style="font-size:18px"><b>'+t("hi")+', '+esc(w.n)+'</b><div class="m">'+esc(si.n)+' · '+T2("Today","आज")+': '+shN(Rr[dw])+'</div></div><div class="tg">'+tile("✅",t("pi"),"#1f7a4a",'data-act="pin"',1)+tile("🏁",t("po"),"#b3362f",'data-act="pout"',1)+'</div>'+(gf?'<div class="m">'+t("gf")+'</div><div class="mk"><button data-act="sim" data-v="1">'+t("sim1")+'</button><button data-act="sim" data-v="2">'+t("sim2")+'</button></div>':'')+'<p class="net" style="font-size:17px;margin:8px 0">'+esc(pmsg)+'</p>'+td.map(function(x){return'<div class="ln" style="font-size:15px"><span>'+t(x.ty=="in"?"pi":"po")+' · <b>'+tmf(x.t)+'</b></span><span style="color:var(--'+(x.ok?"acc":"bad")+')">'+(x.ok?"✔":"✖ "+t("out"))+'</span></div>'}).join("")+
+'<div class="tg" style="margin-top:12px">'+tile("💰",T2("My Salary","मेरी सैलरी"),"#0d6b5c",'data-tab="ssal"')+tile("📅",T2("My Attendance","मेरी हाज़िरी"),"#2a5db0",'data-tab="scal"')+tile("🗓️",T2("My Duty","मेरी ड्यूटी"),"#6b3fa0",'data-tab="sros"')+tile("📢",T2("Messages","संदेश")+(nn?" ("+nn+")":""),"#b8590f",'data-tab="smsg"')+tile("🌴",T2("Leave","छुट्टी"),"#7a4b2a",'data-tab="sleave"')+tile("💵",T2("Advance","एडवांस"),"#44546a",'data-tab="sadv"')+tile("🧾",T2("Reimbursement","खर्चा वापसी"),"#a8325f",'data-tab="srb"')+tile("🌐","हिंदी / English","#2f6f73",'data-act="lang"')+'</div>'}
+if(tab=="scal"){var y=+mon.slice(0,4),mo=+mon.slice(5)-1,nd=new Date(y,mo+1,0).getDate(),off=(new Date(y,mo,1).getDay()+6)%7,cc={P:0,A:0,H:0,L:0},cl={P:"acc",A:"bad",H:"warn",L:"mut"};h+='<input type="month" id="mon" value="'+mon+'"><div class="cal" style="margin:8px 0">'+T2("M T W T F S S","सो मं बु गु शु श र").split(" ").map(function(d){return'<span class="m">'+d+'</span>'}).join("");for(var i=0;i<off;i++)h+='<span></span>';
+for(var d=1;d<=nd;d++){var ds=mon+"-"+pad(d),st=(S.A[ds]||{})[me],ho=S.hol.some(function(x){return x.d==ds}),wo=Rr[(new Date(y,mo,d).getDay()+6)%7]==0;if(st)cc[st]++;h+='<div style="'+(st?"background:var(--"+cl[st]+");color:var(--on);border-color:transparent":ho?"border-color:var(--warn)":wo?"color:var(--mut)":"")+'">'+d+'</div>'}
+h+='</div><div class="g3"><div class="st"><b>'+cc.P+'</b><span>'+t("pr")+'</span></div><div class="st"><b>'+cc.A+'</b><span>'+t("ab")+'</span></div><div class="st"><b>'+cc.L+'</b><span>'+T2("Leave","छुट्टी")+'</span></div></div><div class="m">'+T2("Orange outline = holiday, grey = weekly off","नारंगी = छुट्टी, ग्रे = साप्ताहिक ऑफ")+'</div>'}
+if(tab=="ssal"){var r=calc(w,mon),ln=function(a,b){return'<div class="ln"><span>'+a+'</span><span>'+b+'</span></div>'};h+='<input type="month" id="mon" value="'+mon+'"><div class="slip" style="margin-top:8px"><b>'+esc(S.co)+'</b><div class="m">'+t("sl")+' · '+mon+'</div><h3>'+esc(w.n)+' · '+esc(w.d)+'</h3>'+ln(w.ty=="p"?t("pcs"):t("dy"),w.ty=="p"?r.q:r.dys)+ln(T2("Basic","बेसिक"),inr(r.base))+ln(t("ot")+" "+r.ot,"+ "+inr(r.otp))+ln(t("gr"),inr(r.g))+ln("PF","- "+inr(r.pf))+ln("ESI","- "+inr(r.es))+ln(t("adv"),"- "+inr(w.a))+ln(T2("Reimbursement","रीइम्बर्समेंट"),"+ "+inr(w.re||0))+'<div class="rt"><b>'+t("nt")+'</b><span class="net">'+inr(r.net)+'</span></div></div>'}
+if(tab=="sros"){h+='<div class="m">'+esc(si.n)+'</div>';for(var i=0;i<7;i++){var dd=new Date(n);dd.setDate(n.getDate()+i);var ds=dd.toISOString().slice(0,10),ho=S.hol.filter(function(x){return x.d==ds})[0];h+='<div class="row"><div class="rt"><b>'+dd.toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short"})+'</b><span class="tag">'+(ho?esc(ho.n):shN(Rr[(dd.getDay()+6)%7]))+'</span></div></div>'}}
+if(tab=="smsg"){h+=mine.map(function(m){return'<div class="row"><div class="rt"><b>'+esc(m.ti)+'</b><span class="m">'+new Date(m.t).toLocaleDateString("en-IN",{day:"numeric",month:"short"})+'</span></div><div>'+esc(m.bo)+'</div></div>'}).join("")||'<div class="m">—</div>'}
+if(tab=="sleave"||tab=="sadv"||tab=="srb"){var ty=tab=="sleave"?"leave":tab=="sadv"?"adv":"rb",ic={leave:"🌴",adv:"💵",rb:"🧾"}[ty];
+h+='<h3 style="font-size:20px">'+ic+' '+(ty=="leave"?T2("Apply for leave","छुट्टी माँगें"):ty=="adv"?T2("Ask for advance","एडवांस माँगें"):T2("Claim expense money back","खर्चे के पैसे वापस माँगें"))+'</h3><div class="f big">'+
+(ty=="leave"?'<label>'+T2("From date","कब से")+'<input type="date" id="rfr"></label><label>'+T2("To date","कब तक")+'<input type="date" id="rto"></label>':'<label>'+T2("Amount (Rs)","रकम (Rs)")+'<input type="number" id="ram" min="0" inputmode="numeric"></label>')+
+(ty=="rb"?'<label>'+T2("What for","किस काम का खर्चा")+'<select id="rcat"><option>🚌 '+T2("Travel","यात्रा")+'</option><option>🍛 '+T2("Food","खाना")+'</option><option>🔧 '+T2("Tools","औज़ार")+'</option><option>💊 '+T2("Medical","दवाई")+'</option><option>📦 '+T2("Other","अन्य")+'</option></select></label>'+tile("📷",bimg?T2("✔ Bill photo added","✔ बिल की फोटो जुड़ गई"):T2("Take photo of bill","बिल की फोटो लें"),"#2a5db0",'data-act="bill"'):'')+
+'<label>'+T2("Reason (optional)","कारण (जो चाहें)")+'<input id="rwh"></label>'+tile("📨",T2("Send","भेजें"),"#1f7a4a",'data-act="rq" data-v="'+ty+'"',1)+'</div><p class="net" style="font-size:17px">'+esc(pmsg)+'</p>'+
+S.RQ.filter(function(r){return r.w==me&&r.ty==ty}).sort(function(a,b){return b.t-a.t}).map(function(r){return'<div class="row" style="font-size:16px"><div class="rt"><b>'+rqTxt(r)+'</b><span class="tag" style="font-size:14px">'+(r.st=="p"?"⏳ "+T2("Pending","इंतज़ार"):r.st=="a"?"✔ "+T2("Approved","मंज़ूर"):"✖ "+T2("Rejected","रद्द"))+'</span></div><div class="m">'+esc(r.why||"")+'</div></div>'}).join("")}
+return(tab=="shome"?h+LO:BACK+h)}
+function render(){var s=document.getElementById("scr"),y=s.scrollTop,h="";if(role!="m"){document.getElementById("ttl").textContent=S.co;tabsBar();s.innerHTML=role=="s"?stHTML():lgHTML();return}
+document.getElementById("ttl").textContent=S.co;document.getElementById("dt").textContent=new Date().toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short"});
+tabsBar();
+var tm=S.W.reduce(function(a,w){return a+calc(w,mon).net},0),td=S.A[day]||{};
+if(tab=="home"){var c=function(v){return S.W.filter(function(w){return td[w.id]==v}).length},pq=S.RQ.filter(function(r){return r.st=="p"}).length,ob2=S.P.filter(function(x){return dk(x.t)==day&&!x.ok}).length,dp={},tr="";
+h+='<div class="tg" style="margin-bottom:10px">'+[["att","📝"],["wk","👥"],["sal","💰"],["pun","📍"],["ros","🗓️"],["req","📥"],["msg","📢"],["rep","📊"],["set","⚙️"]].filter(function(x){return keys().indexOf(x[0])>=0}).map(function(x){return tile(x[1],TN[x[0]][L]+(x[0]=="req"&&pq?" ("+pq+")":""),"#0d6b5c",'data-tab="'+x[0]+'"')}).join("")+'</div><div class="g3"><div class="st"><b>'+c("P")+'</b><span>'+t("pr")+'</span></div><div class="st"><b>'+c("H")+'</b><span>'+t("hf")+'</span></div><div class="st"><b>'+c("A")+'</b><span>'+t("ab")+'</span></div></div><div class="g3"><div class="st"><b>'+pq+'</b><span>'+T2("Pending requests","पेंडिंग रिक्वेस्ट")+'</span></div><div class="st"><b>'+c("L")+'</b><span>'+T2("On leave","छुट्टी पर")+'</span></div><div class="st"><b>'+ob2+'</b><span>'+T2("Outside area","एरिया के बाहर")+'</span></div></div>';
+if(ar=="admin")h+='<div class="row"><span class="m">'+t("tot")+'</span><div class="net">'+inr(tm)+'</div></div>';
+S.W.forEach(function(w){dp[w.d]=(dp[w.d]||0)+1});h+='<h3>'+T2("Department headcount","विभाग अनुसार स्टाफ")+'</h3><div class="row">'+Object.keys(dp).map(function(k){return'<div class="ln"><span>'+esc(k)+'</span><b>'+dp[k]+'</b></div><div class="bar" style="width:'+dp[k]/S.W.length*100+'%;margin-bottom:6px"></div>'}).join("")+'</div>';
+for(var i=6;i>=0;i--){var dd=new Date();dd.setDate(dd.getDate()-i);var ds=dd.toISOString().slice(0,10),n=S.W.filter(function(w){return (S.A[ds]||{})[w.id]=="P"}).length;tr+='<div style="flex:1;text-align:center"><div style="height:'+(n/Math.max(S.W.length,1)*60)+'px;background:var(--acc);border-radius:4px 4px 0 0"></div><span class="m">'+ds.slice(8)+'</span></div>'}
+h+='<h3>'+T2("Last 7 days present","पिछले 7 दिन हाज़िर")+'</h3><div class="row" style="display:flex;gap:4px;align-items:flex-end;height:90px">'+tr+'</div><h3>'+t("none")+'</h3>'+(S.W.filter(function(w){return !td[w.id]}).map(function(w){return'<div class="row">'+esc(w.n)+'</div>'}).join("")||'<div class="m">—</div>')}
+if(tab=="att"){h+='<div class="rt"><input type="date" id="day" value="'+day+'"><button class="sm" data-act="all">'+t("mall")+'</button></div><br>';
+S.W.forEach(function(w){var s1=td[w.id],o=(S.O[day]||{})[w.id]||0;
+h+='<div class="row"><div class="rt"><b>'+esc(w.n)+'</b><span class="tag">'+t(w.ty=="d"?"dl":w.ty=="m"?"mo":"pc")+'</span></div><div class="mk">'+[["P","pr",""],["H","hf","h"],["A","ab","a"]].map(function(m){return'<button class="'+(s1==m[0]?"on "+m[2]:"")+'" data-act="mk" data-id="'+w.id+'" data-v="'+m[0]+'">'+t(m[1])+'</button>'}).join("")+'</div>'+
+(w.ty=="p"?'<div class="ot">'+t("pcs")+': <input class="num" type="number" min="0" data-q="'+w.id+'" value="'+(((S.Q[day]||{})[w.id])||"")+'"></div>':'<div class="ot">'+t("ot")+': <button class="sm" data-act="ot" data-id="'+w.id+'" data-v="-1" aria-label="less">-</button><b>'+o+'</b><button class="sm" data-act="ot" data-id="'+w.id+'" data-v="1" aria-label="more">+</button></div>')+'</div>'})}
+if(tab=="wk"){S.W.forEach(function(w){h+='<div class="row"><div class="rt"><b>'+esc(w.n)+'</b><button class="sm" data-act="del" data-id="'+w.id+'">'+t("del")+'</button></div><div class="ln"><span>'+t(w.ty=="d"?"dl":w.ty=="m"?"mo":"pc")+'</span><span>'+inr(w.r)+'</span></div><div class="m">'+esc(w.ph)+' · '+esc(SI(w.id).n)+' · '+esc(w.d||'')+'</div></div>'});
+h+='<h3>'+t("add")+'</h3><div class="f"><label>'+t("nm")+'<input id="nn"></label><label>'+t("ph")+'<input id="np" inputmode="numeric"></label><label>'+t("ty")+'<select id="nt"><option value="d">'+t("dl")+'</option><option value="m">'+t("mo")+'</option><option value="p">'+t("pc")+'</option></select></label><label>'+t("rt")+'<input id="nr" type="number" min="0"></label><label>'+T2("Department","विभाग")+'<select id="nd">'+["Production","Packing","Store","Quality","Admin"].map(function(x){return'<option>'+x+'</option>'}).join("")+'</select></label><label>'+t("bn")+'<select id="nb">'+S.sites.map(function(z){return'<option value="'+z.id+'">'+esc(z.n)+'</option>'}).join("")+'</select></label><button class="btn p" data-act="add">'+t("add")+'</button></div>'}
+if(tab=="sal"){if(slip){var w=S.W.filter(function(x){return x.id==slip})[0],r=calc(w,mon),ln=function(a,b){return'<div class="ln"><span>'+a+'</span><span>'+b+'</span></div>'};
+var tx=S.co+" – "+mon+"\n"+w.n+"\n"+t("gr")+": "+inr(r.g)+"\nPF: "+inr(r.pf)+" ESI: "+inr(r.es)+" "+t("adv")+": "+inr(w.a)+"\n"+t("nt")+": "+inr(r.net);
+h+='<div class="slip"><b>'+esc(S.co)+'</b><div class="m">'+t("sl")+' · '+mon+'</div><h3>'+esc(w.n)+'</h3>'+ln(t("dy")+(w.ty=="p"?" / "+t("pcs"):""),w.ty=="p"?r.q:r.dys)+ln("",inr(r.base))+ln(t("ot")+" "+r.ot,"+ "+inr(r.otp))+ln(t("gr"),inr(r.g))+ln("PF","- "+inr(r.pf))+ln("ESI","- "+inr(r.es))+ln(t("adv"),"- "+inr(w.a))+ln(T2("Reimbursement","रीइम्बर्समेंट"),"+ "+inr(w.re||0))+'<div class="rt"><b>'+t("nt")+'</b><span class="net">'+inr(r.net)+'</span></div></div>'+
+'<a class="btn p" target="_blank" rel="noopener" href="https://wa.me/91'+encodeURIComponent(w.ph)+'?text='+encodeURIComponent(tx)+'">'+t("wa")+'</a><button class="btn" data-act="x">'+t("cl")+'</button>'}
+else{h+='<input type="month" id="mon" value="'+mon+'"><div class="row" style="margin-top:8px"><span class="m">'+t("tot")+'</span><div class="net">'+inr(tm)+'</div></div>';
+S.W.forEach(function(w){var r=calc(w,mon);h+='<div class="row"><div class="rt"><b>'+esc(w.n)+'</b><span class="net">'+inr(r.net)+'</span></div><div class="ln"><span>'+(w.ty=="p"?r.q+" "+t("pcs"):r.dys+" "+t("dy"))+' · PF+ESI '+inr(r.pf+r.es)+'</span><span>'+t("adv")+' <input class="num" type="number" min="0" data-adv="'+w.id+'" value="'+w.a+'"></span></div><button class="sm" data-act="slip" data-id="'+w.id+'" style="margin-top:6px">'+t("sl")+'</button></div>'})}}
+if(tab=="pun"){var si=S.sites.filter(function(z){return z.id==bsel})[0]||S.sites[0];bsel=si.id;var pd=S.P.filter(function(x){return dk(x.t)==day}),nw=Date.now(),
+ro=S.W.filter(function(w){return w.b==si.id}).map(function(w){var q=pd.filter(function(x){return x.w==w.id}).sort(function(a,b){return a.t-b.t}),ins=q.filter(function(x){return x.ty=="in"&&x.ok})[0],ou=q.filter(function(x){return x.ty=="out"&&x.ok}).pop(),lp=q[q.length-1],lv=LV[w.id],late=false;lv=lv&&nw-lv.t<3e5?lv:null;if(ins){var d0=new Date(ins.t),th=S.ss.split(":");late=d0.getHours()*60+d0.getMinutes()>+th[0]*60+ +th[1]}return{w:w,ins:ins,ou:ou,lp:lp,lv:lv,late:late,pos:lv||lp}}),
+pn=ro.filter(function(r){return r.ins}).length,lt=ro.filter(function(r){return r.late}).length;
+h+='<div class="rt"><select id="bs">'+S.sites.map(function(z){return'<option value="'+z.id+'"'+(z.id==si.id?" selected":"")+'>'+esc(z.n)+'</option>'}).join("")+'</select><input type="date" id="day" value="'+day+'"></div><div class="g3" style="margin-top:8px"><div class="st"><b>'+pn+'</b><span>'+t("ps")+'</span></div><div class="st"><b>'+(ro.length-pn)+'</b><span>'+t("npn")+'</span></div><div class="st"><b>'+lt+'</b><span>'+t("lt")+'</span></div></div>';
+var pts=ro.filter(function(r){return r.pos&&r.pos.la}).map(function(r){return{r:r,x:(r.pos.ln-si.lng)*111320*Math.cos(si.lat*Math.PI/180),y:-(r.pos.la-si.lat)*110574}}),mx=Math.max(si.r*1.4,Math.max.apply(null,pts.map(function(o){return Math.hypot(o.x,o.y)*1.25}).concat([1]))),k=95/mx;
+h+='<h3>'+t("mp")+'</h3><svg viewBox="0 0 300 220" style="width:100%;background:var(--card);border:1px solid var(--line);border-radius:8px" role="img" aria-label="map"><path d="M0 110H300M150 0V220" stroke="var(--line)"/><circle cx="150" cy="110" r="'+(si.r*k)+'" style="fill:var(--acc);fill-opacity:.12;stroke:var(--acc)" stroke-dasharray="4 3"/><text x="150" y="'+(110-si.r*k-5)+'" text-anchor="middle" font-size="10" style="fill:var(--acc)">'+esc(si.n)+' · '+si.r+' m</text><rect x="146" y="106" width="8" height="8" style="fill:var(--ink)"/>'+
+pts.map(function(o){var c=o.r.pos.ok===false?"bad":"acc",X=150+o.x*k,Y=110+o.y*k;return'<g>'+(o.r.lv?'<circle cx="'+X+'" cy="'+Y+'" r="14" style="fill:none;stroke:var(--warn);stroke-width:2"/>':'')+'<circle cx="'+X+'" cy="'+Y+'" r="9" style="fill:var(--'+c+')"/><text x="'+X+'" y="'+(Y+4)+'" text-anchor="middle" font-size="10" style="fill:var(--on)">'+esc(o.r.w.n.charAt(0))+'</text></g>'}).join("")+'</svg><div class="m">■ '+esc(si.n)+' · <span style="color:var(--acc)">●</span> '+t("ok")+' · <span style="color:var(--bad)">●</span> '+t("out")+' · <span style="color:var(--warn)">◯</span> '+t("lv")+'</div>'+
+(pts.length?'<a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/'+pts.map(function(o){return o.r.pos.la+","+o.r.pos.ln}).join("/")+'">'+t("all")+'</a>':'')+'<h3>'+t("rp")+'</h3>';
+ro.forEach(function(r){var st=r.ins?(r.ou?t("dn"):t("wo")):t("npn");h+='<div class="row"><div class="rt"><span style="display:flex;gap:8px;align-items:center">'+(r.ins&&r.ins.im?'<img alt="" src="'+r.ins.im+'" width="40" height="40" style="border-radius:50%;object-fit:cover">':'')+'<b>'+esc(r.w.n)+'</b></span><span class="tag" style="'+(r.lv?"color:var(--warn);border-color:var(--warn)":r.ins?"color:var(--acc);border-color:var(--acc)":"")+'">'+(r.lv?t("lv"):st)+'</span></div>'+
+(r.ins?'<div class="ln"><span>'+t("fi")+' <b>'+tmf(r.ins.t)+'</b>'+(r.late?' <span style="color:var(--warn)">· '+t("lt")+'</span>':'')+'</span><span>'+t("lo")+' <b>'+(r.ou?tmf(r.ou.t):"—")+'</b></span></div>'+(r.ou?'<div class="ln"><span>'+t("hr")+'</span><span>'+((r.ou.t-r.ins.t)/36e5).toFixed(1)+'</span></div>':''):'')+
+(r.pos&&r.pos.la?'<div class="ln"><span style="color:var(--'+(r.lp&&!r.lp.ok?"bad":"acc")+')">'+(r.lp?(r.lp.ok?"":t("out")+" · ")+(r.lp.i?t("in")+" "+esc(si.n):r.lp.d+" m"):"")+'</span><a href="https://maps.google.com/?q='+r.pos.la+','+r.pos.ln+'" target="_blank" rel="noopener" style="color:var(--acc)">'+t("map")+'</a></div>':'')+'</div>'})}
+if(tab=="set"){h+='<div class="f"><label>'+t("pm")+'<select id="pmd"><option value="any"'+(S.pm=="any"?" selected":"")+'>'+t("any")+'</option><option value="site"'+(S.pm=="site"?" selected":"")+'>'+t("site")+'</option></select></label><label class="chk"><input type="checkbox" id="pls"'+(S.pol.selfie?" checked":"")+'>'+T2("Selfie required for punch","पंच पर सेल्फी जरूरी")+'</label><label class="chk"><input type="checkbox" id="pll"'+(S.pol.loc?" checked":"")+'>'+T2("Location required for punch","पंच पर लोकेशन जरूरी")+'</label><label class="chk"><input type="checkbox" id="plv"'+(S.pol.live?" checked":"")+'>'+T2("Live tracking of staff on duty","ड्यूटी पर लाइव ट्रैकिंग")+'</label><label>'+t("sh")+'<input id="sst" type="time" value="'+S.ss+'"></label><label>'+t("co")+'<input id="co" value="'+esc(S.co)+'"></label><label>'+t("om")+'<select id="om">'+[1,1.5,2].map(function(v){return'<option'+(v==S.om?" selected":"")+'>'+v+'</option>'}).join("")+'</select></label><label class="chk"><input type="checkbox" id="pf"'+(S.pf?" checked":"")+'>'+t("pf")+'</label><label class="chk"><input type="checkbox" id="es"'+(S.es?" checked":"")+'>'+t("es")+'</label></div><h3>'+t("br")+'</h3>'+
+S.sites.map(function(z){return'<div class="row"><div class="rt"><input data-sn="'+z.id+'" value="'+esc(z.n)+'" aria-label="name"><button class="sm" data-act="dsite" data-id="'+z.id+'">'+t("del")+'</button></div><div class="ln" style="margin-top:6px"><span>'+t("sr")+'</span><input class="num" type="number" min="20" data-sr="'+z.id+'" value="'+z.r+'"></div><button class="sm" data-act="loc" data-id="'+z.id+'" style="margin-top:6px">'+t("ss")+'</button><div class="m">'+z.lat.toFixed(4)+', '+z.lng.toFixed(4)+'</div></div>'}).join("")+
+'<h3>'+T2("Holidays","छुट्टियाँ")+'</h3>'+S.hol.map(function(x){return'<div class="ln"><span>'+x.d+'</span><span>'+esc(x.n)+'</span></div>'}).join("")+'<div class="rt" style="margin-top:6px"><input type="date" id="hd"><input id="hn" placeholder="Name"><button class="sm" data-act="hol">+</button></div><button class="btn" data-act="asite">'+t("ab2")+'</button><p class="m">'+(db?t("cld"):t("loc"))+'</p><button class="btn" data-act="out">'+t("lgo")+'</button><button class="btn" data-act="rs">'+t("rs")+'</button>'}
+if(tab=="ros"){var DN=T2("Mon Tue Wed Thu Fri Sat Sun","सो मं बु गु शु श र").split(" ");h+='<div class="m">'+S.sh.map(function(z){return z.id+" = "+z.n+" "+z.s+"–"+z.e}).join(" · ")+" · 0 = "+T2("Off","छुट्टी")+'</div>';S.W.forEach(function(w){h+='<div class="row"><b>'+esc(w.n)+'</b><div class="cal" style="margin-top:6px">'+DN.map(function(d,i){return'<div style="border:0;padding:0"><span class="m">'+d+'</span><select data-ro="'+w.id+':'+i+'" style="width:100%;padding:4px 0">'+[0].concat(S.sh.map(function(z){return z.id})).map(function(v){return'<option'+(S.R[w.id][i]==v?" selected":"")+'>'+v+'</option>'}).join("")+'</select></div>'}).join("")+'</div></div>'})}
+if(tab=="req"){var rl=S.RQ.slice().sort(function(a,b){return (a.st=="p"?0:1)-(b.st=="p"?0:1)||b.t-a.t});h+=rl.map(function(r){var w=W1(r.w);return'<div class="row"><div class="rt"><b>'+esc(w?w.n:"?")+'</b><span class="tag">'+rqTag(r)+'</span></div><div class="ln"><span>'+rqTxt(r)+'</span><span>'+esc(r.why||"")+'</span></div>'+(r.im?'<img alt="bill" src="'+r.im+'" style="max-width:100%;border-radius:6px;margin-top:6px">':"")+(r.st=="p"?'<div class="mk"><button class="on" data-act="ap" data-id="'+r.id+'">'+T2("Approve","मंज़ूर")+'</button><button class="on a" data-act="rj" data-id="'+r.id+'">'+T2("Reject","रद्द")+'</button></div>':'<div class="m">'+(r.st=="a"?T2("Approved","मंज़ूर"):T2("Rejected","रद्द"))+'</div>')+'</div>'}).join("")||'<div class="m">—</div>'}
+if(tab=="msg"){h+='<div class="f"><label>'+T2("Send to","किसे भेजें")+'<select id="bto"><option value="0">'+T2("All staff","सभी स्टाफ")+'</option>'+S.sites.map(function(z){return'<option value="'+z.id+'">'+esc(z.n)+'</option>'}).join("")+'</select></label><label>'+T2("Title","शीर्षक")+'<input id="bt"></label><label>'+T2("Message","संदेश")+'<textarea id="bb" rows="3" style="padding:7px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:inherit"></textarea></label><button class="btn p" data-act="bc">'+T2("Send broadcast","ब्रॉडकास्ट भेजें")+'</button></div>'+S.msgs.map(function(m){return'<div class="row"><div class="rt"><b>'+esc(m.ti)+'</b><span class="m">'+new Date(m.t).toLocaleDateString("en-IN",{day:"numeric",month:"short"})+'</span></div><div>'+esc(m.bo)+'</div><div class="m">'+(m.to?esc((S.sites.filter(function(z){return z.id==m.to})[0]||{}).n||""):T2("All staff","सभी स्टाफ"))+'</div></div>'}).join("")}
+if(tab=="rep"){var by={},tp=0,pfs=0,es2=0,ads=0,ots=0,ab3=[];S.W.forEach(function(w){var r=calc(w,mon),k=w.d+" · "+SI(w.id).n;by[k]=by[k]||[0,0];by[k][0]++;by[k][1]+=r.net;pfs+=r.pf;es2+=r.es;ads+=w.a;ots+=r.ot;var n=0;Object.keys(S.A).forEach(function(d){if(d.slice(0,7)==mon&&S.A[d][w.id]=="A")n++});ab3.push([w.n,n])});
+h+='<input type="month" id="mon" value="'+mon+'"><div class="row" style="margin-top:8px"><div class="ln"><span>'+t("tot")+'</span><b>'+inr(tm)+'</b></div><div class="ln"><span>PF</span><span>'+inr(pfs)+'</span></div><div class="ln"><span>ESI</span><span>'+inr(es2)+'</span></div><div class="ln"><span>'+t("adv")+'</span><span>'+inr(ads)+'</span></div><div class="ln"><span>'+t("ot")+'</span><span>'+ots+'</span></div></div><h3>'+T2("Cost by department and branch","विभाग / ब्रांच अनुसार खर्च")+'</h3>'+Object.keys(by).map(function(k){return'<div class="row"><div class="rt"><span>'+esc(k)+' ('+by[k][0]+')</span><b>'+inr(by[k][1])+'</b></div></div>'}).join("")+'<h3>'+T2("Most absent this month","इस महीने सबसे ज़्यादा गैरहाज़िर")+'</h3>'+ab3.sort(function(a,b){return b[1]-a[1]}).slice(0,3).map(function(x){return'<div class="ln"><span>'+esc(x[0])+'</span><b>'+x[1]+'</b></div>'}).join("")+'<button class="btn" data-act="csv">'+T2("Download salary sheet (CSV)","सैलरी शीट डाउनलोड (CSV)")+'</button>'}
+s.innerHTML=h;s.scrollTop=y}
+document.getElementById("lg").onclick=function(){L=1-L;render()};
+document.addEventListener("click",function(e){var b=e.target.closest("[data-tab],[data-act]");if(!b)return;var a=b.dataset.act,id=+b.dataset.id;
+if(b.dataset.tab){tab=b.dataset.tab;slip=null;pmsg=""}else if(a=="lang"){L=1-L}else if(a=="bill"){document.getElementById("bill").click();return}
+else if(a=="mk")set("A",day,id,b.dataset.v);
+else if(a=="all"){S.W.forEach(function(w){set("A",day,w.id,"P")})}
+else if(a=="ot")set("O",day,id,Math.max(0,(((S.O[day]||{})[id])||0)+ +b.dataset.v));
+else if(a=="del"){S.W=S.W.filter(function(w){return w.id!=id});save()}
+else if(a=="add"){var n=document.getElementById("nn").value.trim(),r=+document.getElementById("nr").value;if(!n||!r)return;S.W.push({id:S.nid++,n:n,ph:document.getElementById("np").value.replace(/\D/g,""),ty:document.getElementById("nt").value,r:r,a:0,b:+document.getElementById("nb").value,d:document.getElementById("nd").value});save()}
+else if(a=="slip")slip=id;else if(a=="x")slip=null;
+else if(a=="lm"){var u=document.getElementById("lu").value.trim(),pw2=document.getElementById("lw").value;if(u=="admin"&&pw2=="admin123"||u=="manager"&&pw2=="mgr123"){role="m";ar=u;tab="home";pmsg="";try{localStorage.setItem("tbr","m");localStorage.setItem("tba",u)}catch(e){}}else pmsg=t("bad")}
+else if(a=="ls"){var ph=document.getElementById("lph").value.replace(/\D/g,""),pn2=document.getElementById("lpn").value,w2=S.W.filter(function(x){return x.ph==ph&&ph.slice(-4)==pn2})[0];if(w2){role="s";me=w2.id;tab="shome";L=1;pmsg="";try{localStorage.setItem("tbr","s");localStorage.setItem("tbm",me)}catch(e){}}else pmsg=t("bad")}
+else if(a=="out"){role=null;stopLive();live=false;pmsg="";try{localStorage.removeItem("tbr")}catch(e){}}
+else if(a=="pin"||a=="pout"){pend=a=="pin"?"in":"out";if(S.pol.selfie)document.getElementById("selfie").click();else getPos(pend);return}
+else if(a=="sim"){var o=b.dataset.v=="2"?.01:0,z=SI(me);doPunch(gf,z.lat+o,z.lng);return}
+else if(a=="bc"){var ti=document.getElementById("bt").value.trim(),bo=document.getElementById("bb").value.trim();if(!ti&&!bo)return;S.msgs.unshift({id:Date.now(),t:Date.now(),to:+document.getElementById("bto").value,ti:ti,bo:bo,by:ar});save()}
+else if(a=="rq"){var g=function(i){var e=document.getElementById(i);return e?e.value:""},ty=b.dataset.v,fr=g("rfr"),to=g("rto")||fr,am=+g("ram")||0;if(ty=="leave"&&!fr||ty!="leave"&&!am)return;addRQ({w:+me,ty:ty,from:fr,to:to,amt:am,why:g("rwh"),cat:g("rcat"),im:ty=="rb"?bimg:"",st:"p",t:Date.now()});bimg="";pmsg=T2("✔ Request sent","✔ रिक्वेस्ट भेज दी गई")}
+else if(a=="ap"||a=="rj"){decide(b.dataset.id,a=="ap"?"a":"r")}
+else if(a=="hol"){var hd=document.getElementById("hd").value,hn=document.getElementById("hn").value;if(hd&&hn){S.hol.push({d:hd,n:hn});S.hol.sort(function(x,y){return x.d<y.d?-1:1});save()}}
+else if(a=="csv"){var cs="Name,Branch,Dept,Days,Gross,PF,ESI,Advance,Net\n"+S.W.map(function(w){var r=calc(w,mon);return[w.n,SI(w.id).n,w.d,r.dys,Math.round(r.g),Math.round(r.pf),Math.round(r.es),w.a,Math.round(r.net)].join(",")}).join("\n");if(window.claude&&claude.use)claude.use("downloads").then(function(d){if(d)d.save({filename:"salary-"+mon+".csv",data:cs})}).catch(function(){});return}
+else if(a=="asite"){S.sites.push({id:Math.max.apply(null,S.sites.map(function(z){return z.id}))+1,n:"New branch",lat:S.sites[0].lat+.01,lng:S.sites[0].lng,r:200});save()}
+else if(a=="dsite"){if(S.sites.length>1){S.sites=S.sites.filter(function(z){return z.id!=id});S.W.forEach(function(w){if(!S.sites.some(function(z){return z.id==w.b}))w.b=S.sites[0].id});bsel=S.sites[0].id;save()}}
+else if(a=="loc"){if(navigator.geolocation)navigator.geolocation.getCurrentPosition(function(p){var z=S.sites.filter(function(q){return q.id==id})[0];z.lat=p.coords.latitude;z.lng=p.coords.longitude;save();render()},function(){alert("Location not available")});return}
+else if(a=="rs"){S=seed();mig();fill();demoP()}
+render()});
+document.addEventListener("change",function(e){var i=e.target;
+if(i.id=="day")day=i.value||day;else if(i.id=="mon")mon=i.value||mon;
+else if(i.dataset.q)set("Q",day,i.dataset.q,+i.value||0);
+else if(i.dataset.adv){S.W.filter(function(w){return w.id==i.dataset.adv})[0].a=Math.max(0,+i.value||0);save()}
+else if(i.id=="co")S.co=i.value||S.co;else if(i.id=="pls"){S.pol.selfie=i.checked}else if(i.id=="pll"){S.pol.loc=i.checked}else if(i.id=="plv"){S.pol.live=i.checked}else if(i.dataset.ro){var q=i.dataset.ro.split(":");S.R[q[0]][+q[1]]=+i.value}else if(i.id=="nosf"){nosf=i.checked;return}else if(i.id=="lvc"){live=i.checked;if(live)startLive();else stopLive();return}else if(i.id=="bs")bsel=+i.value;else if(i.dataset.sn)S.sites.filter(function(z){return z.id==i.dataset.sn})[0].n=i.value||"Branch";else if(i.dataset.sr)S.sites.filter(function(z){return z.id==i.dataset.sr})[0].r=Math.max(20,+i.value||200);else if(i.id=="pmd")S.pm=i.value;else if(i.id=="sst")S.ss=i.value||S.ss;else if(i.id=="pf")S.pf=i.checked;else if(i.id=="es")S.es=i.checked;else if(i.id=="om")S.om=+i.value;
+else return;save();render()});
+document.getElementById("bill").onchange=function(e){var f=e.target.files[0];e.target.value="";if(!f)return;var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var c=document.createElement("canvas"),k=360/Math.max(im.width,im.height,1);k=Math.min(k,1);c.width=im.width*k;c.height=im.height*k;c.getContext("2d").drawImage(im,0,0,c.width,c.height);bimg=c.toDataURL("image/jpeg",.55);pmsg=T2("✔ Bill photo added","✔ बिल की फोटो जुड़ गई");render()};im.src=r.result};r.readAsDataURL(f)};
+document.getElementById("selfie").onchange=function(e){var f=e.target.files[0];e.target.value="";if(!f)return;var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var c=document.createElement("canvas"),k=120/Math.max(im.width,im.height);c.width=im.width*k;c.height=im.height*k;c.getContext("2d").drawImage(im,0,0,c.width,c.height);img=c.toDataURL("image/jpeg",.5);getPos(pend)};im.src=r.result};r.readAsDataURL(f)};
+try{if(window.claude&&claude.use)claude.use("db").then(function(d){if(!d)return;db=d;
+d.doc("tb/main").onSnapshot(function(sn){if(!sn.exists){if(role=="m")save();return}var j=sn.data().j;if(j==lastJ)return;lastJ=j;var P=S.P;S=JSON.parse(j);S.P=P;mig();try{localStorage.setItem("tb1",JSON.stringify(S))}catch(e){}rr()},function(){});
+d.collection("punches").orderBy("t","desc").limit(300).onSnapshot(function(sn){S.P=sn.docs.map(function(x){return x.data()});if(role=="m")autoAtt();rr()},function(){});
+d.collection("reqs").onSnapshot(function(sn){S.RQ=sn.docs.map(function(x){var o=x.data();o.id=x.id;return o});rr()},function(){});
+d.collection("live").onSnapshot(function(sn){LV={};sn.docs.forEach(function(x){var v=x.data();LV[v.w]=v});rr()},function(){});render()}).catch(function(){})}catch(e){}
+render();
+<\/script></body></html>
+</script>
+<script>
+var WA="919693947417";/* set your WhatsApp number with country code, e.g. "919876543210" */
+var P=document.getElementById("proto").textContent.replace(/<\\\/script>/g,"</scr"+"ipt>"),fr=document.getElementById("fr"),bm=document.getElementById("b-m"),bs=document.getElementById("b-s");
+function ls(f){try{f()}catch(e){}}
+function go(r){ls(function(){if(r=="m"){localStorage.setItem("tbr","m");localStorage.setItem("tba","admin")}else if(r=="s"){localStorage.setItem("tbr","s");localStorage.setItem("tbm","1")}else localStorage.removeItem("tbr")});
+bm.setAttribute("aria-pressed",r=="m");bs.setAttribute("aria-pressed",r=="s");fr.srcdoc=P}
+bm.onclick=function(){go("m")};bs.onclick=function(){go("s")};
+document.getElementById("b-r").onclick=function(){ls(function(){["tb1","tbr","tba","tbm"].forEach(function(k){localStorage.removeItem(k)})});bm.setAttribute("aria-pressed",false);bs.setAttribute("aria-pressed",false);fr.srcdoc=P};
+go("m");
+document.getElementById("f").onsubmit=function(e){e.preventDefault();var d=new FormData(e.target),m="Hi Tankhabook, I would like a demo.\nName: "+d.get("n")+"\nCompany: "+d.get("c")+"\nWorkers: "+d.get("w")+"\nPhone: "+d.get("p"),o=document.getElementById("out");
+if(WA){window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(m),"_blank");o.textContent="Opening WhatsApp. Send the message and we will call you back."}
+else{o.textContent="Your request is ready. Copy it and send it to us on WhatsApp:\n\n"+m;ls(function(){navigator.clipboard.writeText(m)})}
+o.hidden=false};
+var T={h:["Factory attendance and salary, settled on one phone.","फैक्ट्री की हाज़िरी और तनख्वाह, एक फ़ोन में।"],l:[document.getElementById("ld").textContent,"हाज़िरी, ओवरटाइम और एडवांस दर्ज करें, PF और ESI निकालें, और हर मज़दूर को सैलरी स्लिप भेजें। उन फैक्ट्रियों और ठेकेदारों के लिए जो आज भी रजिस्टर और Excel पर काम करते हैं।"]},hl=0;
+document.getElementById("lg").onclick=function(){hl=1-hl;document.getElementById("h1").textContent=T.h[hl];document.getElementById("ld").textContent=T.l[hl];document.documentElement.lang=hl?"hi":"en"};
+document.getElementById("th").onclick=function(){var r=document.documentElement,d=r.dataset.theme?r.dataset.theme=="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=d?"light":"dark"};
+var sl=document.getElementById("sl");
+function pr(){var n=+sl.value,k=n<=5?0:n<=50?1:2;document.getElementById("sn").textContent=n;[0,1,2].forEach(function(i){document.getElementById("pc"+i).classList.toggle("rec",i==k)});document.getElementById("rc").textContent=["Free","Pro","Enterprise"][k]+" fits "+(n>50?"50+":n)+" workers."}
+sl.oninput=pr;pr();
+function cc(){var g=function(i){return Math.max(0,+document.getElementById(i).value||0)},d=g("cd"),w=g("cw"),o=g("co"),a=g("ca"),e=d*w,ot=o*(w/8)*2,gr=e+ot,pf=e*.12,es=gr<=21000?gr*.0075:0,nt=gr-pf-es-a,f=function(x){return "₹"+Math.round(x).toLocaleString("en-IN")};
+r1.textContent=f(e);r2.textContent="+ "+f(ot);r3.textContent="− "+f(pf+es);r4.textContent="− "+f(a);r5.textContent=f(nt)}
+["cd","cw","co","ca"].forEach(function(i){document.getElementById(i).oninput=cc});cc();
+var IN=[["Factories","Shift workers, overtime and PF/ESI are tracked on paper and re-typed into Excel.","Mark attendance by team, pay overtime at the right rate, and see PF and ESI in the monthly report."],["Garment units","Daily wage workers and piece-rate workers sit side by side in one shed.","Set the pay type for each worker, enter pieces made, and pay on output."],["Contractors","Workers move between sites and ask for advances every week.","Add each site as a branch, check workers in by location, and approve advances in the app."],["Security agencies","Guards at many posts, and no easy way to know who reached on time.","Each post is a branch with a location check. The owner sees every post in one view."],["Shops and offices","A small team on monthly salary, and no time for payroll software.","Start free with up to 5 employees. Mark attendance and send slips in minutes."]];
+var it=document.getElementById("it");IN.forEach(function(x,i){var b=document.createElement("button");b.textContent=x[0];b.setAttribute("role","tab");b.onclick=function(){sel(i)};it.appendChild(b)});
+function sel(i){[].forEach.call(it.children,function(b,j){b.setAttribute("aria-selected",j==i)});ip1.textContent=IN[i][1];ip2.textContent=IN[i][2]}sel(0);
+addEventListener("scroll",function(){var s=document.documentElement;pgb.style.width=(100*scrollY/Math.max(1,s.scrollHeight-innerHeight))+"%"},{passive:true});
+</script></body></html>
